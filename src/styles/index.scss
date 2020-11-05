@@ -631,8 +631,9 @@ pre tt:after {
 
 .no-numbers li {
   flex: auto;
-  padding: 1em;
+  padding: 10px;
   text-align: center;
+  max-width: 300px;
 }
 .no-numbers li:hover {
   background-color: #e9e9e9;
