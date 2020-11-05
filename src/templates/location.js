@@ -27,16 +27,17 @@ const Location = props => {
       <IWC
         containerWidth="100%"
         title={locations.name}
-        institution={props.data.yv.institutions.inst_id}
+        institution={institution.inst_id}
         dataType="inline-embed"
         location={locations.loc_id}
         showCode="true"
       />
       <hr />
       <IWC
-        containerWidth="500px"
+        containerWidth="1160px"
+        containerHeight="440px"
         title={locations.name}
-        institution={props.data.yv.institutions.inst_id}
+        institution={institution.inst_id}
         dataType="inline-embed"
         location={locations.loc_id}
         showCode="true"
@@ -45,7 +46,7 @@ const Location = props => {
       <IWC
         containerWidth="250px"
         title={locations.name}
-        institution={props.data.yv.institutions.inst_id}
+        institution={institution.inst_id}
         dataType="inline-embed"
         location={locations.loc_id}
         showCode="true"
@@ -53,7 +54,7 @@ const Location = props => {
       <IWC
         containerWidth="100%"
         title={locations.name}
-        institution={props.data.yv.institutions.inst_id}
+        institution={institution.inst_id}
         dataType="hover"
         location={locations.loc_id}
         showCode="true"
@@ -61,7 +62,7 @@ const Location = props => {
       <IWC
         containerWidth="500px"
         title={locations.name}
-        institution={props.data.yv.institutions.inst_id}
+        institution={institution.inst_id}
         dataType="hover"
         location={locations.loc_id}
         showCode="true"
@@ -69,7 +70,7 @@ const Location = props => {
       <IWC
         containerWidth="250px"
         title={locations.name}
-        institution={props.data.yv.institutions.inst_id}
+        institution={institution.inst_id}
         dataType="hover"
         location={locations.loc_id}
         showCode="true"
