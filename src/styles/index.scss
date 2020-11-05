@@ -630,6 +630,7 @@ pre tt:after {
 
 .no-numbers li {
   flex: auto;
+  flex-wrap: wrap;
   padding: 1em;
   text-align: center;
 }
