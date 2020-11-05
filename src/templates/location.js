@@ -24,7 +24,7 @@ const Location = props => {
   return (
     <Layout title={institution.name}>
       <h2>{locations.name}</h2>
-      <IWC
+      {/* <IWC
         containerWidth="100%"
         title={locations.name}
         institution={institution.inst_id}
@@ -32,18 +32,18 @@ const Location = props => {
         location={locations.loc_id}
         showCode="true"
       />
-      <hr />
+      <hr /> */}
       <IWC
-        containerWidth="1160px"
+        containerWidth="100%"
         containerHeight="440px"
         title={locations.name}
         institution={institution.inst_id}
         dataType="inline-embed"
         location={locations.loc_id}
-        showCode="true"
+        showCode=""
       />
       <hr />
-      <IWC
+      {/* <IWC
         containerWidth="250px"
         title={locations.name}
         institution={institution.inst_id}
@@ -74,7 +74,7 @@ const Location = props => {
         dataType="hover"
         location={locations.loc_id}
         showCode="true"
-      />
+      /> */}
     </Layout>
   )
 }

@@ -14,12 +14,12 @@ const IndexPage = ({ data }) => {
         {locations.map(location => {
           return (
             <li key={location.loc_id}>
-              {/* <Link to={`/location/${location.loc_id}`}>
+              <Link to={`/location/${location.loc_id}`}>
                 <img src={location.cover_photo.thumb} alt={location.name} />
                 <h2>{location.name}</h2>
-              </Link> */}
+              </Link>
 
-              <IWC
+              {/* <IWC
                 containerWidth="100%"
                 containerHeight="440px"
                 title={location.name}
@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
                 dataType="inline-embed"
                 location={location.loc_id}
                 // showCode="true"
-              />
+              /> */}
             </li>
           )
         })}
