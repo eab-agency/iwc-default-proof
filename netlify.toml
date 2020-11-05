@@ -1,7 +1,7 @@
- [[redirects]]
-  from = "/proof/YOUVISIT_INSTID/*"
-  to = ":splat"
-  status = 200
+## [[redirects]]
+##  from = "/proof/YOUVISIT_INSTID/*"
+##  to = ":splat"
+##  status = 200
 
 ## [[redirects]] 
 ##  from = "/proof/YOUVISIT_INSTID_TEST/*"
