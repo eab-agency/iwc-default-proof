@@ -626,11 +626,11 @@ pre tt:after {
 .no-numbers {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .no-numbers li {
   flex: auto;
-  flex-wrap: wrap;
   padding: 1em;
   text-align: center;
 }
