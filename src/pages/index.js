@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import IWC from "../components/iwc"
+// import IWC from "../components/iwc"
 
 const IndexPage = ({ data }) => {
   const locations = data.yv.institutions.locations

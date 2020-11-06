@@ -6,7 +6,9 @@ const path = require("path")
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const instID = process.env.YOUVISIT_INSTID
-  const blogTemplate = path.resolve("./src/templates/location.js")
+  const partnerTemplate = path.resolve("./src/templates/partner-location.js")
+  const internalTemplate = path.resolve("./src/templates/internal-location.js")
+
   const res = await graphql(
     `
       query($instID: String) {
@@ -24,13 +26,21 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   res.data.yv.institutions.locations.forEach(location => {
     createPage({
-      component: blogTemplate,
+      component: partnerTemplate,
       path: `/location/${location.loc_id}`,
       context: {
         locID: `${location.loc_id}`,
         instID: `${instID}`,
       },
-    })
+    }),
+      createPage({
+        component: internalTemplate,
+        path: `/internal/location/${location.loc_id}`,
+        context: {
+          locID: `${location.loc_id}`,
+          instID: `${instID}`,
+        },
+      })
   })
 }
 

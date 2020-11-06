@@ -7,6 +7,7 @@ class IWC extends Component {
     super(props)
     this.YVSource = "https://www.youvisit.com/tour/Embed/js3"
   }
+
   scan() {
     scriptjs(this.YVSource, () => {
       console.log("scanning for links")
