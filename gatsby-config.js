@@ -19,5 +19,6 @@ module.exports = {
         refetchInterval: 60,
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 }

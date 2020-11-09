@@ -37,6 +37,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
         component: internalTemplate,
         path: `/internal/location/${location.loc_id}`,
         context: {
+          type: `internal`,
           locID: `${location.loc_id}`,
           instID: `${instID}`,
         },

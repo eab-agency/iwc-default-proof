@@ -17,6 +17,8 @@
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^0.5.15",
     "gatsby": "^2.24.91",
+    "gatsby-plugin-create-client-paths": "^2.3.13",
+    "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-source-filesystem": "^2.3.37",
     "gatsby-source-graphql": "^2.7.6",
@@ -25,6 +27,7 @@
     "prismjs": "^1.22.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^6.1.0",
     "scriptjs": "^2.5.9"
   },
   "devDependencies": {

@@ -1,7 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
+// import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 const IndexPage = ({ data }) => {
   const institution = data.yv.institutions
@@ -16,10 +17,6 @@ const IndexPage = ({ data }) => {
   ) {
     console.log(locations)
   } else {
-    console.log(
-      "is there anything in filtered_locations_arr?",
-      filtered_locations_arr
-    )
     filtered_locations_arr = filtered_locations_arr.split`,`.map(x => +x)
     locations = locations.filter(el => {
       return filtered_locations_arr.some(f => {
@@ -27,18 +24,10 @@ const IndexPage = ({ data }) => {
       })
     })
   }
-  console.log("filtered_locations_arr: ", filtered_locations_arr)
-  if (
-    // first check if env variable is set
-    filtered_locations_arr === undefined ||
-    filtered_locations_arr.length === 0
-  ) {
-  }
 
   return (
     <Layout title={institution.name}>
       <ol className="no-numbers">
-        {console.log(locations)}
         {locations.map(location => {
           return (
             <li key={location.loc_id}>
