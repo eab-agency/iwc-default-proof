@@ -2,15 +2,43 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-// import IWC from "../components/iwc"
 
 const IndexPage = ({ data }) => {
-  const locations = data.yv.institutions.locations
   const institution = data.yv.institutions
+  // turn LOCATIONS into an array
+  // const filtered_locations_arr = process.env.LOCATIONS.split(",")
+  let locations = data.yv.institutions.locations
+  let filtered_locations_arr = process.env.LOCATIONS
+  if (
+    // first check if env variable is set
+    filtered_locations_arr === undefined ||
+    filtered_locations_arr.length === 0
+  ) {
+    console.log(locations)
+  } else {
+    console.log(
+      "is there anything in filtered_locations_arr?",
+      filtered_locations_arr
+    )
+    filtered_locations_arr = filtered_locations_arr.split`,`.map(x => +x)
+    locations = locations.filter(el => {
+      return filtered_locations_arr.some(f => {
+        return f === el.loc_id
+      })
+    })
+  }
+  console.log("filtered_locations_arr: ", filtered_locations_arr)
+  if (
+    // first check if env variable is set
+    filtered_locations_arr === undefined ||
+    filtered_locations_arr.length === 0
+  ) {
+  }
 
   return (
     <Layout title={institution.name}>
       <ol className="no-numbers">
+        {console.log(locations)}
         {locations.map(location => {
           return (
             <li key={location.loc_id}>
@@ -18,16 +46,6 @@ const IndexPage = ({ data }) => {
                 <img src={location.cover_photo.thumb} alt={location.name} />
                 <h2>{location.name}</h2>
               </Link>
-
-              {/* <IWC
-                containerWidth="100%"
-                containerHeight="440px"
-                title={location.name}
-                institution={institution.inst_id}
-                dataType="inline-embed"
-                location={location.loc_id}
-                // showCode="true"
-              /> */}
             </li>
           )
         })}

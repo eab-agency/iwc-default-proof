@@ -23,6 +23,7 @@ const Location = props => {
   const [width, setWidth] = useState()
   const [type, setType] = useState("inline-embed")
   const [height, setHeight] = useState(250)
+
   const institution = props.data.yv.institutions
   const locations = props.data.yv.locations
   return (

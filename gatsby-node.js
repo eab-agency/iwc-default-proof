@@ -49,7 +49,7 @@ exports.onCreatePage = ({ page, actions }) => {
   const instID = process.env.YOUVISIT_INSTID
 
   deletePage(page)
-  // You can access the variable "house" in your page queries now
+  // You can access the variable "instID" in your page queries now
   createPage({
     ...page,
     context: {
