@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   // pathPrefix: `/proof/${process.env.YOUVISIT_INSTID}`,
   siteMetadata: {

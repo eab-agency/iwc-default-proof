@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => {
   // turn LOCATIONS into an array
   // const filtered_locations_arr = process.env.LOCATIONS.split(",")
   let locations = data.yv.institutions.locations
-  let filtered_locations_arr = process.env.LOCATIONS
+  let filtered_locations_arr = process.env.GATSBY_LOCATIONS
   if (
     // first check if env variable is set
     filtered_locations_arr === undefined ||
