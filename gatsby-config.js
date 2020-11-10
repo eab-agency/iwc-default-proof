@@ -3,7 +3,7 @@ require("dotenv").config({
 })
 
 module.exports = {
-  pathPrefix: `/proof/${process.env.YOUVISIT_INSTID}`,
+  // pathPrefix: `/proof/${process.env.YOUVISIT_INSTID}`,
   siteMetadata: {
     title: "IWC Proofs",
   },

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import IWC from "../components/iwc"
 
 export const query = graphql`
@@ -24,15 +24,7 @@ const Location = props => {
   return (
     <Layout title={institution.name}>
       <h2>{locations.name}</h2>
-      {/* <IWC
-        containerWidth="100%"
-        title={locations.name}
-        institution={institution.inst_id}
-        dataType="inline-embed"
-        location={locations.loc_id}
-        showCode="true"
-      />
-      <hr /> */}
+
       <IWC
         containerWidth="100%"
         containerHeight="440px"
@@ -42,39 +34,6 @@ const Location = props => {
         location={locations.loc_id}
         showCode=""
       />
-      <hr />
-      {/* <IWC
-        containerWidth="250px"
-        title={locations.name}
-        institution={institution.inst_id}
-        dataType="inline-embed"
-        location={locations.loc_id}
-        showCode="true"
-      />
-      <IWC
-        containerWidth="100%"
-        title={locations.name}
-        institution={institution.inst_id}
-        dataType="hover"
-        location={locations.loc_id}
-        showCode="true"
-      />
-      <IWC
-        containerWidth="500px"
-        title={locations.name}
-        institution={institution.inst_id}
-        dataType="hover"
-        location={locations.loc_id}
-        showCode="true"
-      />
-      <IWC
-        containerWidth="250px"
-        title={locations.name}
-        institution={institution.inst_id}
-        dataType="hover"
-        location={locations.loc_id}
-        showCode="true"
-      /> */}
     </Layout>
   )
 }

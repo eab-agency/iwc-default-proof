@@ -32,16 +32,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
         locID: `${location.loc_id}`,
         instID: `${instID}`,
       },
-    }),
-      createPage({
-        component: internalTemplate,
-        path: `/internal/location/${location.loc_id}`,
-        context: {
-          type: `internal`,
-          locID: `${location.loc_id}`,
-          instID: `${instID}`,
-        },
-      })
+    })
+    createPage({
+      component: internalTemplate,
+      path: `/internal/location/${location.loc_id}`,
+      context: {
+        locID: `${location.loc_id}`,
+        instID: `${instID}`,
+      },
+    })
   })
 }
 

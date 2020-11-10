@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-// import Layout from "../components/layout"
+// import Layout from "../components/Layout"
 import Layout from "../components/Layout"
 
 const IndexPage = ({ data }) => {
@@ -51,16 +51,11 @@ export const query = graphql`
       institutions(instID: $instID) {
         locations {
           loc_id
-          inst_name
-          experience_type
           name
-          privacy
-          status
           cover_photo {
             thumb
           }
         }
-        inst_id
         name
       }
     }
