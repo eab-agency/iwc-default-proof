@@ -11,3 +11,9 @@
 ##[[redirects]]
 ##  from = "/proof/121419/*"
 ##  to = ":splat"
+
+[build]
+    command = "gatsby build"
+    publish = "public"
+[dev]
+    command = "gatsby develop"
