@@ -6,7 +6,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  // Slider,
   FormControlLabel,
   Radio,
   RadioGroup,
@@ -32,25 +31,19 @@ const useStyles = makeStyles({
 
 const IWCModifyForm = ({ updateWidth, updateType, updateHeight }) => {
   const classes = useStyles()
-  const [width, setwidth] = useState(50)
+  const [width, setwidth] = useState(100)
   const [type, settype] = useState("inline-embed")
-  const [height, setHeight] = useState(250)
-  const [radio, setradio] = useState("px")
-
-  // const handleSliderChange = (event, newValue) => {
-  //   setwidth(newValue)
-  //   updateWidth(width + radio)
-  // }
+  const [height, setHeight] = useState(300)
+  const [radio, setradio] = useState("%")
 
   const handelInputWidthChange = (event, newValue) => {
-    console.log("newValue: ", newValue)
     setwidth(event.target.value)
-    updateWidth(width + radio)
+    updateWidth(event.target.value + radio)
   }
 
   const handelInputHeightChange = (event, newValue) => {
     setHeight(event.target.value)
-    updateHeight(height)
+    updateHeight(event.target.value)
   }
 
   const handleSubmit = (event, newValue) => {
@@ -62,23 +55,13 @@ const IWCModifyForm = ({ updateWidth, updateType, updateHeight }) => {
 
   const handleRadioChange = (event, newValue) => {
     setradio(newValue)
-    setwidth(width)
     updateWidth(width + newValue)
   }
-
-  // const handleVerticalSliderChange = (event, newValue) => {
-  //   setHeight(newValue)
-  //   updateHeight(height)
-  // }
 
   const handleTypeChange = (event, newValue) => {
     settype(event.target.value)
     updateType(event.target.value)
   }
-
-  // function valuetext(value) {
-  //   return `${value}`
-  // }
 
   return (
     <form className={classes.root}>
@@ -90,7 +73,6 @@ const IWCModifyForm = ({ updateWidth, updateType, updateHeight }) => {
             </Typography>
 
             <Input
-              defaultValue=""
               inputProps={{ "aria-label": "description" }}
               onChange={handelInputWidthChange}
               value={width}

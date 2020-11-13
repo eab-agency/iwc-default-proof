@@ -1,40 +1,27 @@
+/* eslint no-undef: 0 */
+
 import React, { useEffect } from "react"
-// import scriptjs from "scriptjs"
 import { PrismCode } from "./prismcode"
+import useScript from "../utils/useScript"
 
 const IWClocation = props => {
+  const yvObj = window.YVScript
+
   const YVSource = "https://www.youvisit.com/tour/Embed/js3"
+  const status = useScript(YVSource)
+
   const width = props.containerWidth
   const height = props.containerHeight
-  const type = props.dataType
+  // const type = props.dataType
 
   useEffect(() => {
-    const script = document.createElement("script")
-    script.src = YVSource
-    script.async = true
-    document.body.appendChild(script)
-    const yvObj = window.YVScripts
-    yvObj && yvObj.scanEmbeds()
-
-    return () => {}
-  }, [])
-
-  useEffect(() => {
-    console.log("Type has changed!", type)
-    const yvObj = window.YVScripts
-    yvObj && yvObj.resetEmbeds() && yvObj.scanEmbeds()
-    return () => {}
-  }, [type])
-
-  // function scan() {
-  //   scriptjs(YVSource, () => {
-  //     const yvObj = window.YVScript
-  //     yvObj && yvObj.scanEmbeds()
-  //   })
-  // }
+    if (status === "ready") {
+      yvObj && yvObj.scanEmbeds()
+    }
+  })
 
   const iwcstyle = {
-    border: "5px solid pink",
+    // border: "5px solid pink",
     display: "block",
     width: `${width}`,
     height: `${height}px`,
@@ -59,6 +46,7 @@ const IWClocation = props => {
 </div>
 <script async="async" defer="defer" src="https://www.youvisit.com/tour/Embed/js3"></script>
     `
+
   let formattedCode
   if (props.showCode) {
     formattedCode = (
@@ -68,7 +56,6 @@ const IWClocation = props => {
 
   return (
     <div>
-      {type}
       <div className="iwc" style={iwcstyle}>
         <a
           href="https://www.youvisit.com"
