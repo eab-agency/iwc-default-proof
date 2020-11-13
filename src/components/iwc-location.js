@@ -5,8 +5,6 @@ import { PrismCode } from "./prismcode"
 import useScript from "../utils/useScript"
 
 const IWClocation = props => {
-  const yvObj = window.YVScript
-
   const YVSource = "https://www.youvisit.com/tour/Embed/js3"
   const status = useScript(YVSource)
 
@@ -15,6 +13,7 @@ const IWClocation = props => {
   // const type = props.dataType
 
   useEffect(() => {
+    const yvObj = window.YVScript
     if (status === "ready") {
       yvObj && yvObj.scanEmbeds()
     }
