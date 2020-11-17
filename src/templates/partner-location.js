@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import IWC from "../components/iwc"
+import IWCLocation from "../components/iwc-location"
 
 export const query = graphql`
   query($locID: String, $instID: String) {
@@ -21,18 +21,21 @@ export const query = graphql`
 const Location = props => {
   const institution = props.data.yv.institutions
   const locations = props.data.yv.locations
+
+  const showCode = process.env.GATSBY_SHOWCODE
+
   return (
     <Layout title={institution.name}>
       <h2>{locations.name}</h2>
 
-      <IWC
+      <IWCLocation
         containerWidth="100%"
-        containerHeight="440px"
+        containerHeight="400px"
         title={locations.name}
         institution={institution.inst_id}
         dataType="inline-embed"
         location={locations.loc_id}
-        showCode=""
+        showCode={showCode}
       />
     </Layout>
   )
