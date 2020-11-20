@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import scriptjs from "scriptjs"
-import { PrismCode } from "./prismcode"
+import { PrismCode } from "./YouVisitIWC/prismcode"
 
 class IWC extends Component {
   constructor(props) {
