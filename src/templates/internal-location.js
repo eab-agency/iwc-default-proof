@@ -65,6 +65,7 @@ export const query = graphql`
       }
       institutions(instID: $instID) {
         inst_id
+        name
       }
     }
   }
