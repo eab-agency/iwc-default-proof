@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
           return (
             <li key={location.loc_id}>
               <Link to={`/location/${location.loc_id}`}>
-                <img src={location.cover_photo.thumb} alt={location.name} />
+                <img src={location.cover_photo.full} alt={location.name} />
                 <h2>{location.name}</h2>
               </Link>
             </li>
@@ -54,6 +54,7 @@ export const query = graphql`
           name
           cover_photo {
             thumb
+            full
           }
         }
         name
