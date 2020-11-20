@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import IWCLocation from "../components/iwc-location"
+// import IWCLocation from "../components/iwc-location"
+import { YouVisitIWC } from "@ux_bob/yv-iwc"
 
 export const query = graphql`
   query($locID: String, $instID: String) {
@@ -28,7 +29,7 @@ const Location = props => {
     <Layout title={institution.name}>
       <h2>{locations.name}</h2>
 
-      <IWCLocation
+      <YouVisitIWC
         containerWidth="100%"
         containerHeight="400px"
         title={locations.name}

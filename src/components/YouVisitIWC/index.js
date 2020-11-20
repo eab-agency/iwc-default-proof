@@ -1,10 +1,10 @@
 /* eslint no-undef: 0 */
 
 import React, { useEffect } from "react"
-import { PrismCode } from "./YouVisitIWC/prismcode"
-import useScript from "./YouVisitIWC/useScript"
+import { PrismCode } from "./prismcode"
+import useScript from "./useScript"
 
-const IWClocation = props => {
+const YouVisitIWC = props => {
   const YVSource = "https://www.youvisit.com/tour/Embed/js3"
   const status = useScript(YVSource)
 
@@ -78,9 +78,9 @@ const IWClocation = props => {
   )
 }
 
-export default IWClocation
+export default YouVisitIWC
 
-IWClocation.defaultProps = {
+YouVisitIWC.defaultProps = {
   containerHeight: "300px",
   containerWidth: "100%",
   title: "Launch Experience",
