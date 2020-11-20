@@ -23,7 +23,7 @@ const IWClocation = props => {
     // border: "5px solid pink",
     display: "block",
     width: `${width}`,
-    height: `${height}`,
+    height: `${height}px`,
   }
 
   const codeString = `
@@ -47,7 +47,7 @@ const IWClocation = props => {
     `
 
   let formattedCode
-  if (props.showCode === "true") {
+  if (props.showCode) {
     formattedCode = (
       <PrismCode code={codeString} language="html" plugins={["line-numbers"]} />
     )
