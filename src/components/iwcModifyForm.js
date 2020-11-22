@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     width: "100%",
   },
   verticalSlider: {
-    height: 300,
+    height: 500,
   },
   input: {
     width: 142,
@@ -33,7 +33,7 @@ const IWCModifyForm = ({ updateWidth, updateType, updateHeight }) => {
   const classes = useStyles()
   const [width, setwidth] = useState(100)
   const [type, settype] = useState("inline-embed")
-  const [height, setHeight] = useState(300)
+  const [height, setHeight] = useState(400)
   const [radio, setradio] = useState("%")
 
   const handelInputWidthChange = (event, newValue) => {
@@ -43,12 +43,12 @@ const IWCModifyForm = ({ updateWidth, updateType, updateHeight }) => {
 
   const handelInputHeightChange = (event, newValue) => {
     setHeight(event.target.value)
-    updateHeight(event.target.value)
+    updateHeight(event.target.value + "px")
   }
 
   const handleSubmit = (event, newValue) => {
     console.log("width + radio: ", width + radio)
-    console.log("height: ", height)
+    console.log("height: ", height + "px")
     updateWidth(width + radio)
     updateHeight(height)
   }

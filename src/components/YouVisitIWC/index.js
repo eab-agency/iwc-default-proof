@@ -81,7 +81,7 @@ const YouVisitIWC = props => {
 export default YouVisitIWC
 
 YouVisitIWC.defaultProps = {
-  containerHeight: "300px",
+  containerHeight: "400px",
   containerWidth: "100%",
   title: "Launch Experience",
   linkType: "immersive",
