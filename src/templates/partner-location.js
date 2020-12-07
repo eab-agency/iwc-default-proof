@@ -25,7 +25,7 @@ const Location = props => {
 
   return (
     <Layout title={institution.name}>
-      <h2>{locations.name}</h2>
+      {/* <h2>{locations.name}</h2> */}
 
       <IWCLocation
         containerWidth="100%"
