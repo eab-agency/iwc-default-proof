@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 // import IWClocation from "../components/iwc-location"
 import IWCModifyForm from "../components/iwcModifyForm"
-import YouVisitIWC from "../components/YouVisitIWC"
+// import YouVisitIWC from "../components/YouVisitIWC"
+import { YouVisitIWC } from "@ux_bob/yv-iwc"
 
 const HotSpot = ({ hotspot }) => {
   return (
@@ -81,6 +82,10 @@ const Location = props => {
         dataType={type}
         location={locations.loc_id}
         showCode="true"
+        title={locations.name}
+        description={locations.description}
+        uploadDate={locations.live_date}
+        thumb={locations.cover_photo.thumb}
       />
       <h2>Interactive Media Elements</h2>
 
@@ -118,6 +123,11 @@ export const query = graphql`
         unique_id
         experience_type
         inst_unique_id
+        description
+        live_date
+        cover_photo {
+          thumb
+        }
         panoramas {
           description
           id
