@@ -29,7 +29,7 @@ const Location = props => {
 
       <IWCLocation
         containerWidth="100%"
-        containerHeight="400px"
+        containerHeight="500px"
         title={locations.name}
         institution={institution.inst_id}
         dataType="inline-embed"
