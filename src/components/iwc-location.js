@@ -25,6 +25,10 @@ const IWClocation = props => {
     width: `${width}`,
     height: `${height}`,
   }
+  let stopid
+  if (props.dataStopid) {
+    stopid = `data-stopid="${props.dataStopid}"`
+  }
 
   const codeString = `
 <div style="height: ${props.containerHeight}; width: ${props.containerWidth}">
@@ -39,7 +43,9 @@ const IWClocation = props => {
       data-loc="${props.location}"
       data-hover-width="${props.hoverWidth}"
       data-hover-height="${props.hoverHeight}"
-      data-type="${props.dataType}">
+      data-type="${props.dataType}"
+      ${stopid}
+      >
   Virtual Tour
   </a>
 </div>
@@ -69,6 +75,9 @@ const IWClocation = props => {
           data-hover-width={props.hoverWidth}
           data-hover-height={props.hoverHeight}
           data-type={props.dataType}
+          // {if pros.dataStopid}
+          data-stopid={props.dataStopid}
+          stopid
         >
           Virtual Tour
         </a>
