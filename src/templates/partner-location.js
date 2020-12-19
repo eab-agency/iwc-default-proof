@@ -40,7 +40,7 @@ const Location = props => {
             containerHeight="500px"
             title={locations.name}
             institution={institution.inst_id}
-            dataType="inline-embed"
+            dataType=""
             location={locations.loc_id}
             showCode={showCode}
             dataStopid={stop.stopid}
