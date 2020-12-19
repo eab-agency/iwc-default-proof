@@ -25,6 +25,13 @@ const IWClocation = props => {
     width: `${width}`,
     height: `${height}`,
   }
+  let stopid
+  if (typeof props.dataStopid !== "undefined") {
+    stopid = `data-stopid="${props.dataStopid}"`
+  } else {
+    stopid = ""
+  }
+  const dataType = props.dataType && `data-type="${props.dataType}"`
 
   const codeString = `
 <div style="height: ${props.containerHeight}; width: ${props.containerWidth}">
@@ -39,7 +46,9 @@ const IWClocation = props => {
       data-loc="${props.location}"
       data-hover-width="${props.hoverWidth}"
       data-hover-height="${props.hoverHeight}"
-      data-type="${props.dataType}">
+      ${dataType}
+      ${stopid}
+      >
   Virtual Tour
   </a>
 </div>
@@ -68,7 +77,9 @@ const IWClocation = props => {
           data-loc={props.location}
           data-hover-width={props.hoverWidth}
           data-hover-height={props.hoverHeight}
-          data-type={props.dataType}
+          data-stopid={props.dataStopid}
+          dataType
+          stopid
         >
           Virtual Tour
         </a>
@@ -85,7 +96,6 @@ IWClocation.defaultProps = {
   containerWidth: "100%",
   title: "Launch Experience",
   linkType: "immersive",
-  dataType: "inline-embed",
   iwcWidth: "100%",
   iwcHeight: "100%",
   location: "",

@@ -82,7 +82,6 @@ const Location = props => {
         dataType={type}
         location={locations.loc_id}
         showCode="true"
-        title={locations.name}
         description={locations.description}
         uploadDate={locations.live_date}
         thumb={locations.cover_photo.thumb}

@@ -9,6 +9,11 @@ export const query = graphql`
       locations(locID: $locID) {
         loc_id
         name
+        experience_type
+        stops {
+          stopid
+          title
+        }
       }
       institutions(instID: $instID) {
         inst_id
@@ -22,11 +27,31 @@ const Location = props => {
   const institution = props.data.yv.institutions
   const locations = props.data.yv.locations
   const showCode = process.env.GATSBY_SHOWCODE
+  const experience_type = props.data.yv.locations.experience_type
+  const allStops = props.data.yv.locations.stops
+  let stops = ""
+  if (experience_type === "vt") {
+    stops = allStops.map((stop, index) => {
+      return (
+        <div key={index}>
+          <h3>{stop.title}</h3>
+          <IWCLocation
+            containerWidth="100%"
+            containerHeight="500px"
+            title={locations.name}
+            institution={institution.inst_id}
+            dataType=""
+            location={locations.loc_id}
+            showCode={showCode}
+            dataStopid={stop.stopid}
+          />
+        </div>
+      )
+    })
+  }
 
   return (
     <Layout title={institution.name}>
-      {/* <h2>{locations.name}</h2> */}
-
       <IWCLocation
         containerWidth="100%"
         containerHeight="500px"
@@ -36,6 +61,7 @@ const Location = props => {
         location={locations.loc_id}
         showCode={showCode}
       />
+      {stops}
     </Layout>
   )
 }
