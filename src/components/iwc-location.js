@@ -26,8 +26,10 @@ const IWClocation = props => {
     height: `${height}`,
   }
   let stopid
-  if (props.dataStopid) {
+  if (typeof props.dataStopid !== "undefined") {
     stopid = `data-stopid="${props.dataStopid}"`
+  } else {
+    stopid = ""
   }
 
   const codeString = `

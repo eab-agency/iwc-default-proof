@@ -34,13 +34,13 @@ const Location = props => {
     stops = allStops.map((stop, index) => {
       return (
         <div key={index}>
-          <h2>{stop.title}</h2>
+          <h3>{stop.title}</h3>
           <IWCLocation
             containerWidth="100%"
             containerHeight="500px"
             title={locations.name}
             institution={institution.inst_id}
-            dataType="immersive"
+            dataType="inline-embed"
             location={locations.loc_id}
             showCode={showCode}
             dataStopid={stop.stopid}
@@ -52,8 +52,6 @@ const Location = props => {
 
   return (
     <Layout title={institution.name}>
-      {/* <h2>{locations.name}</h2> */}
-      {/* <pre>{JSON.stringify(stops, null, 4)}</pre> */}
       <IWCLocation
         containerWidth="100%"
         containerHeight="500px"
@@ -64,13 +62,6 @@ const Location = props => {
         showCode={showCode}
       />
       {stops}
-      {/* {stops.map((stop, index) => {
-        return (
-          <p key={index}>
-            This is the: {stop.stopid} at index: {index}
-          </p>
-        )
-      })} */}
     </Layout>
   )
 }
