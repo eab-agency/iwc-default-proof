@@ -49,6 +49,7 @@ const MediaItems = ({ media_item }) => {
           <p>Title: {media_item.video.title}</p>
           <video width="100%" controls>
             <source src={media_item.video.url} type="video/mp4" />
+            <track default kind="captions" srclang="en" src="" />
             {/* <source src="movie.ogg" type="video/ogg" /> */}
             Your browser does not support the video tag.
           </video>
