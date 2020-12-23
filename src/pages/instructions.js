@@ -118,12 +118,19 @@ const InstructionsPage = ({ data }) => {
   <a alt="Launch Experience" href="https://www.youvisit.com/#/vte/?data-platform=v&data-inst=${datum.inst_id}&data-image-width=100%&data-image-height=100%&data-loc=${stop.stopid}&">Launch Experience</a>
 
   `
-      const imgUrl = stop.panoramas[0].smallurl
       return (
         <tr key={index}>
           <td>
-            <img alt={stop.title} src={imgUrl} />
             {stop.title}
+            <IWCLocation
+              containerWidth="100%"
+              containerHeight="200px"
+              title={stop.title}
+              institution={datum.inst_id}
+              dataType=""
+              location={locations.loc_id}
+              dataStopid={stop.stopid}
+            />
           </td>
           <td>
             {/* <PrismCode code={immersiveBannerCode} language="html" /> */}
@@ -142,26 +149,11 @@ const InstructionsPage = ({ data }) => {
   const yvcode = `
           <script async="async" defer="defer" src="https://www.youvisit.com/tour/Embed/js3"></script>
           `
-  const embedCode = `
-  <a href="https://www.youvisit.com"
-      className="virtualtour_embed"
-      title="Launch Experience"
-      data-platform="v"
-      data-link-type="immersive"
-      data-inst="${institutionID}"
-      data-image-width="100%"
-      data-image-height="100%">
-      Launch Experience
-  </a>
-        `
 
   return (
     <Layout title={title}>
       {pageHeadingTree ? <ul>{pageHeadingTree.map(renderNodeList)}</ul> : null}
-      <div
-        ref={headingsContainerRef}
-        className="bg-dark p-3 text-light rounded-top"
-      >
+      <div ref={headingsContainerRef}>
         <h2 id="unlocking-the-power">
           Unlocking The Power of Your Virtual Tour
         </h2>
