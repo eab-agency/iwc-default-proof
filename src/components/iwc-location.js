@@ -73,6 +73,7 @@ const IWClocation = props => {
           Virtual Tour
         </a>
       </div>
+      <p>{props.updateDate}</p>
       {formattedCode}
     </div>
   )
@@ -91,4 +92,5 @@ IWClocation.defaultProps = {
   location: "",
   hoverWidth: "90%",
   hoverHeight: "70%",
+  updateDate: "",
 }
