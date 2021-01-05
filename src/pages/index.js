@@ -34,6 +34,8 @@ const IndexPage = ({ data }) => {
               <Link to={`/location/${location.loc_id}`}>
                 <img src={location.cover_photo.full} alt={location.name} />
                 <h2>{location.name}</h2>
+                <p>{location.update_date}</p>
+                <p>{location.experience_type}</p>
               </Link>
             </li>
           )
@@ -46,19 +48,21 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query($instID: String) {
-    yv {
-      institutions(instID: $instID) {
-        locations {
-          loc_id
-          name
-          cover_photo {
-            thumb
-            full
-          }
-        }
-        name
-      }
-    }
-  }
-`
+         query($instID: String) {
+           yv {
+             institutions(instID: $instID) {
+               locations {
+                 loc_id
+                 name
+                 update_date
+                 experience_type
+                 cover_photo {
+                   thumb
+                   full
+                 }
+               }
+               name
+             }
+           }
+         }
+       `

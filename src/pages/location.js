@@ -28,16 +28,16 @@ const BlogPage = ({ data }) => {
 export default BlogPage
 
 export const query = graphql`
-  query($instID: String) {
-    yv {
-      institutions(instID: $instID) {
-        locations {
-          loc_id
-          experience_type
-          name
-        }
-        name
-      }
-    }
-  }
-`
+         query($instID: String) {
+           yv {
+             institutions(instID: $instID) {
+               locations {
+                 loc_id
+                 experience_type
+                 name
+               }
+               name
+             }
+           }
+         }
+       `

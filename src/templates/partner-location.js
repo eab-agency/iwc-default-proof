@@ -65,6 +65,7 @@ const Location = props => {
         type="inline-embed"
         location={locations.loc_id}
         showCode={showCode}
+        updateDate={locations.update_date}
       />
 
       {experience_type === "vt" ? (
