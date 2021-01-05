@@ -30,7 +30,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^6.1.0",
-    "scriptjs": "^2.5.9"
+    "scriptjs": "^2.5.9",
+    "use-page-headings-tree": "^1.0.8"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
