@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import IWCLocation from "../components/iwc-location"
+import { YouVisitIWC } from "@ux_bob/yv-iwc"
 
 export const query = graphql`
   query($locID: String, $instID: String) {
@@ -35,13 +35,14 @@ const Location = props => {
       return (
         <div key={index}>
           <h3>{stop.title}</h3>
-          <IWCLocation
+          <YouVisitIWC
             containerWidth="100%"
             containerHeight="500px"
             title={locations.name}
             institution={institution.inst_id}
             dataType=""
             location={locations.loc_id}
+            loadStopOnly="1"
             showCode={showCode}
             dataStopid={stop.stopid}
           />
@@ -49,10 +50,35 @@ const Location = props => {
       )
     })
   }
-
+  const iwcstyle = {
+    // border: "5px solid pink",
+    display: "block",
+    width: `100%`,
+    height: `400px`,
+  }
   return (
     <Layout title={institution.name}>
-      <IWCLocation
+      <div className="iwc" style={iwcstyle}>
+        <a
+          href="https://www.youvisit.com"
+          className="virtualtour_embed"
+          title="Virtual Reality, Virtual Tour"
+          data-platform="v"
+          data-link-type="immersive"
+          data-inst="120207"
+          data-stopid="270815"
+          data-load-stop-only="1"
+          data-hover-width="90%"
+          data-hover-height="70%"
+          data-image-width="100%"
+          data-image-height="100%"
+          data-loc="142537"
+        >
+          Virtual Tour
+        </a>
+      </div>
+
+      <YouVisitIWC
         containerWidth="100%"
         containerHeight="500px"
         title={locations.name}

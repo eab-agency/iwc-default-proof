@@ -1,9 +1,7 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-// import IWClocation from "../components/iwc-location"
 import IWCModifyForm from "../components/iwcModifyForm"
-// import YouVisitIWC from "../components/YouVisitIWC"
 import { YouVisitIWC } from "@ux_bob/yv-iwc"
 
 const HotSpot = ({ hotspot }) => {

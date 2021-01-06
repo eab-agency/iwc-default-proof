@@ -4,7 +4,6 @@ module.exports = {
     title: "IWC Proofs",
   },
   plugins: [
-    "gatsby-transformer-remark",
     "gatsby-plugin-sass",
     {
       resolve: `gatsby-source-graphql`,

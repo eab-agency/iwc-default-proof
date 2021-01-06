@@ -77,7 +77,6 @@ const IWClocation = props => {
           data-loc={props.location}
           data-hover-width={props.hoverWidth}
           data-hover-height={props.hoverHeight}
-          data-stopid={props.dataStopid}
           dataType
           stopid
         >
