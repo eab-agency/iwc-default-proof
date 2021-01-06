@@ -24,6 +24,9 @@ export const query = graphql`
 `
 
 const Location = props => {
+  const [open, setOpen] = React.useState(false)
+  const onClick = () => setOpen(!open)
+
   const institution = props.data.yv.institutions
   const locations = props.data.yv.locations
   const showCode = process.env.GATSBY_SHOWCODE
@@ -50,34 +53,9 @@ const Location = props => {
       )
     })
   }
-  const iwcstyle = {
-    // border: "5px solid pink",
-    display: "block",
-    width: `100%`,
-    height: `400px`,
-  }
   return (
     <Layout title={institution.name}>
-      <div className="iwc" style={iwcstyle}>
-        <a
-          href="https://www.youvisit.com"
-          className="virtualtour_embed"
-          title="Virtual Reality, Virtual Tour"
-          data-platform="v"
-          data-link-type="immersive"
-          data-inst="120207"
-          data-stopid="270815"
-          data-load-stop-only="1"
-          data-hover-width="90%"
-          data-hover-height="70%"
-          data-image-width="100%"
-          data-image-height="100%"
-          data-loc="142537"
-        >
-          Virtual Tour
-        </a>
-      </div>
-
+      <h2>{locations.name}</h2>
       <YouVisitIWC
         containerWidth="100%"
         containerHeight="500px"
@@ -87,7 +65,12 @@ const Location = props => {
         location={locations.loc_id}
         showCode={showCode}
       />
-      {stops}
+      {experience_type === "vt" ? (
+        <button value="Show Stops" onClick={onClick}>
+          {open ? "Hide Stops" : "Show Stops"}
+        </button>
+      ) : null}
+      {open ? stops : null}
     </Layout>
   )
 }
