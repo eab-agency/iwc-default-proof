@@ -78,7 +78,7 @@ const Location = props => {
         containerHeight={height}
         title={locations.name}
         institution={institution.inst_id}
-        dataType={type}
+        type={type}
         location={locations.loc_id}
         showCode="true"
         description={locations.description}

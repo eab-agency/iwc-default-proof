@@ -98,7 +98,7 @@ const InstructionsPage = ({ data }) => {
             containerHeight="500px"
             title={locations.name}
             institution={datum.inst_id}
-            dataType=""
+            type=""
             location={locations.loc_id}
             showCode="false"
             dataStopid={stop.stopid}
@@ -127,7 +127,7 @@ const InstructionsPage = ({ data }) => {
               containerHeight="200px"
               title={stop.title}
               institution={datum.inst_id}
-              dataType=""
+              type=""
               location={locations.loc_id}
               dataStopid={stop.stopid}
             />

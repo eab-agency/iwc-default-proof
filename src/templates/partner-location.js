@@ -41,18 +41,19 @@ const Location = props => {
           <YouVisitIWC
             containerWidth="100%"
             containerHeight="500px"
-            title={locations.name}
+            title={stop.title}
             institution={institution.inst_id}
-            dataType=""
+            type=""
             location={locations.loc_id}
             loadStopOnly="1"
             showCode={showCode}
-            dataStopid={stop.stopid}
+            stopId={stop.stopid}
           />
         </div>
       )
     })
   }
+
   return (
     <Layout title={institution.name}>
       <h2>{locations.name}</h2>
@@ -61,10 +62,11 @@ const Location = props => {
         containerHeight="500px"
         title={locations.name}
         institution={institution.inst_id}
-        dataType="inline-embed"
+        type="inline-embed"
         location={locations.loc_id}
         showCode={showCode}
       />
+
       {experience_type === "vt" ? (
         <button value="Show Stops" onClick={onClick}>
           {open ? "Hide Stops" : "Show Stops"}
