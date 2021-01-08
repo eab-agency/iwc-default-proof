@@ -6,10 +6,12 @@ import Footer from "./Footer"
 const Layout = props => {
   return (
     <div className="main_container">
-      <Header title={props.title} path={props.path} />
-      <div className="wrapper centered">
-        {props.children}
-      </div>
+      <Header
+        title={props.title}
+        path={props.path}
+        locations={props.locations}
+      />
+      <div className="wrapper centered">{props.children}</div>
       <Footer />
     </div>
   )

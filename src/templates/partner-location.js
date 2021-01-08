@@ -4,32 +4,40 @@ import Layout from "../components/Layout"
 import { YouVisitIWC } from "@ux_bob/yv-iwc"
 
 export const query = graphql`
-                query($locID: String, $instID: String) {
-                  yv {
-                    locations(locID: $locID) {
-                      loc_id
-                      name
-                      experience_type
-                      update_date
-                      stops {
-                        stopid
-                        title
-                      }
-                    }
-                    institutions(instID: $instID) {
-                      inst_id
-                      name
-                    }
-                  }
-                }
-              `
+  query($locID: String, $instID: String) {
+    yv {
+      locations(locID: $locID) {
+        loc_id
+        name
+        experience_type
+        update_date
+        stops {
+          stopid
+          title
+        }
+      }
+      institutions(instID: $instID) {
+        inst_id
+        name
+        locations {
+          experience_type
+          privacy
+          status
+          loc_id
+          name
+        }
+      }
+    }
+  }
+`
 
 const Location = props => {
   const [open, setOpen] = React.useState(false)
   const onClick = () => setOpen(!open)
 
   const institution = props.data.yv.institutions
-  const locations = props.data.yv.locations
+  const location = props.data.yv.locations
+  const locations = props.data.yv.institutions.locations
   const showCode = process.env.GATSBY_SHOWCODE
   const experience_type = props.data.yv.locations.experience_type
   const allStops = props.data.yv.locations.stops
@@ -45,30 +53,29 @@ const Location = props => {
             title={stop.title}
             institution={institution.inst_id}
             type=""
-            location={locations.loc_id}
+            location={location.loc_id}
             loadStopOnly="1"
             showCode={showCode}
             stopId={stop.stopid}
           />
         </div>
-        
       )
     })
   }
 
   return (
-    <Layout title={institution.name}>
-      <h2>{locations.name}</h2>
+    <Layout title={institution.name} locations={locations}>
+      <h2>{location.name}</h2>
       <YouVisitIWC
         containerWidth="100%"
         containerHeight="500px"
-        title={locations.name}
+        title={location.name}
         institution={institution.inst_id}
         type="inline-embed"
-        location={locations.loc_id}
+        location={location.loc_id}
         showCode={showCode}
-        updateDate={locations.update_date}
-        experienceType={locations.experience_type}
+        updateDate={location.update_date}
+        experienceType={location.experience_type}
       />
 
       {experience_type === "vt" ? (

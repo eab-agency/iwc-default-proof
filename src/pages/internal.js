@@ -7,7 +7,7 @@ const InternalIndexPage = ({ data }) => {
   const institution = data.yv.institutions
   let locations = data.yv.institutions.locations
   return (
-    <Layout title={`TEAM: ${institution.name}`}>
+    <Layout title={`TEAM: ${institution.name}`} locations={locations}>
       <ol className="no-numbers">
         {locations.map(location => {
           return (
