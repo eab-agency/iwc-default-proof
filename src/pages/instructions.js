@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import { usePageHeadingsTree } from "use-page-headings-tree"
 import { graphql } from "gatsby"
 import { PrismCode } from "../components/YouVisitIWC/prismcode"
-import IWCLocation from "../components/iwc-location"
+import { YouVisitIWC } from "@ux_bob/yv-iwc"
 
 import Layout from "../components/Layout"
 
@@ -93,12 +93,12 @@ const InstructionsPage = ({ data }) => {
       return (
         <div key={index}>
           {/* <h4>{stop.title}</h4> */}
-          <IWCLocation
+          <YouVisitIWC
             containerWidth="100%"
             containerHeight="500px"
             title={locations.name}
             institution={datum.inst_id}
-            type=""
+            type="inline-embed"
             location={locations.loc_id}
             showCode="false"
             dataStopid={stop.stopid}
@@ -122,12 +122,12 @@ const InstructionsPage = ({ data }) => {
         <tr key={index}>
           <td>
             {stop.title}
-            <IWCLocation
+            <YouVisitIWC
               containerWidth="100%"
               containerHeight="200px"
               title={stop.title}
               institution={datum.inst_id}
-              type=""
+              type="inline-embed"
               location={locations.loc_id}
               dataStopid={stop.stopid}
             />
@@ -392,8 +392,9 @@ const InstructionsPage = ({ data }) => {
             form complete 'thank you' page
             <p>
               <b>Paste the provided script tag above the body tag:</b>
-              <PrismCode
-                code={`
+            </p>
+            <PrismCode
+              code={`
 <script>
     var yv_launch_success=true,
     yv_instid=${institutionID},
@@ -401,9 +402,8 @@ const InstructionsPage = ({ data }) => {
 </script>
 <script src="https://www.youvisit.com/tour/Success/js3"></script>
 `}
-                language="html"
-              />
-            </p>
+              language="html"
+            />
           </li>
         </ol>
         <h4>Advanced Instructions</h4>
@@ -417,9 +417,8 @@ const InstructionsPage = ({ data }) => {
         <ol>
           <li>
             Step 1: Paste the provided script tag above the &lt;/body&gt; tag:
-            <p>
-              <PrismCode
-                code={`
+            <PrismCode
+              code={`
 <script>
     var yv_launch_success=true,
     yv_instid=${institutionID},
@@ -427,20 +426,17 @@ const InstructionsPage = ({ data }) => {
 </script>
 <script src="https://www.youvisit.com/tour/Success/js3"></script>
 `}
-                language="html"
-              />
-            </p>
+              language="html"
+            />
           </li>
           Once the success condition is met, execute the following Javascript
           call
-          <p>
-            <PrismCode
-              code={`
+          <PrismCode
+            code={`
 SuccessScript.embedSuccess();
 `}
-              language="javascript"
-            />
-          </p>
+            language="javascript"
+          />
         </ol>
         <h2 id="google-tag-manager">Google Tag Manager</h2>
         <h3 id="google-tag-manager-installing-the-tag">Installing the Tag</h3>
@@ -470,13 +466,13 @@ SuccessScript.embedSuccess();
                 Paste the following <span style={yvTag}>YV TAG</span> in the
                 custom HTML field:
               </b>
-              <PrismCode
-                code={`
+            </p>
+            <PrismCode
+              code={`
 <script src="https://www.youvisit.com/tour/Success/js3"></script>
 `}
-                language="html"
-              />
-            </p>
+              language="html"
+            />
           </li>
           <li>
             Triggering
@@ -506,9 +502,7 @@ SuccessScript.embedSuccess();
           multiple pages, and there are two ways to launch the virtual tour on
           your website:
         </p>
-        <p>
-          <h4>Immersive Banner</h4>
-        </p>
+        <h4>Immersive Banner</h4>
         {stops[0]}
         <ol>
           <li>
@@ -518,14 +512,12 @@ SuccessScript.embedSuccess();
           <li>
             Hyperlink the text on your page to the below{" "}
             <span style={embedCodeTag}>Embed Code</span> URL:
-            <p>
-              <PrismCode
-                code={`
+            <PrismCode
+              code={`
 <a alt="Launch Experience" href="https://www.youvisit.com/#/vte/?data-platform=v&data-link-type=immersive&data-inst=${datum.inst_id}&data-image-width=100%&data-image-height=100%&">Launch Experience</a>
 `}
-                language="html"
-              />
-            </p>
+              language="html"
+            />
           </li>
           <li>
             Done. Now the tag will search the page, see the link, and transform
