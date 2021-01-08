@@ -85,6 +85,7 @@ const IWClocation = props => {
         </a>
       </div>
       <p>{props.updateDate}</p>
+      <p>{props.experienceType}</p>
       {formattedCode}
     </div>
   )
@@ -103,4 +104,5 @@ IWClocation.defaultProps = {
   hoverWidth: "90%",
   hoverHeight: "70%",
   updateDate: "",
+  experienceType: "",
 }

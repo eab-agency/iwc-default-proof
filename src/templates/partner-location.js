@@ -4,41 +4,25 @@ import Layout from "../components/Layout"
 import IWCLocation from "../components/iwc-location"
 
 export const query = graphql`
-<<<<<<< HEAD
-         query($locID: String, $instID: String) {
-           yv {
-             locations(locID: $locID) {
-               loc_id
-               name
-               update_date
-             }
-             institutions(instID: $instID) {
-               inst_id
-               name
-             }
-           }
-         }
-       `
-=======
-  query($locID: String, $instID: String) {
-    yv {
-      locations(locID: $locID) {
-        loc_id
-        name
-        experience_type
-        stops {
-          stopid
-          title
-        }
-      }
-      institutions(instID: $instID) {
-        inst_id
-        name
-      }
-    }
-  }
-`
->>>>>>> 3bd0a9a703a21dd840008d6321cd3cfa6d953dd1
+                query($locID: String, $instID: String) {
+                  yv {
+                    locations(locID: $locID) {
+                      loc_id
+                      name
+                      experience_type
+                      update_date
+                      stops {
+                        stopid
+                        title
+                      }
+                    }
+                    institutions(instID: $instID) {
+                      inst_id
+                      name
+                    }
+                  }
+                }
+              `
 
 const Location = props => {
   const institution = props.data.yv.institutions
@@ -63,6 +47,7 @@ const Location = props => {
             dataStopid={stop.stopid}
           />
         </div>
+        
       )
     })
   }
@@ -78,6 +63,7 @@ const Location = props => {
         location={locations.loc_id}
         showCode={showCode}
         updateDate={locations.update_date}
+        experienceType={locations.experience_type}
       />
       {stops}
     </Layout>
