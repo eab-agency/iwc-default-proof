@@ -4,25 +4,25 @@ import Layout from "../components/Layout"
 import { YouVisitIWC } from "@ux_bob/yv-iwc"
 
 export const query = graphql`
-  query($locID: String, $instID: String) {
-    yv {
-      locations(locID: $locID) {
-        loc_id
-        name
-        experience_type
-        update_date
-        stops {
-          stopid
-          title
-        }
-      }
-      institutions(instID: $instID) {
-        inst_id
-        name
-      }
-    }
-  }
-`
+                query($locID: String, $instID: String) {
+                  yv {
+                    locations(locID: $locID) {
+                      loc_id
+                      name
+                      experience_type
+                      update_date
+                      stops {
+                        stopid
+                        title
+                      }
+                    }
+                    institutions(instID: $instID) {
+                      inst_id
+                      name
+                    }
+                  }
+                }
+              `
 
 const Location = props => {
   const [open, setOpen] = React.useState(false)
@@ -51,6 +51,7 @@ const Location = props => {
             stopId={stop.stopid}
           />
         </div>
+        
       )
     })
   }

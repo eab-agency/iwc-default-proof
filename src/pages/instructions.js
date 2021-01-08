@@ -156,62 +156,69 @@ const InstructionsPage = ({ data }) => {
     <LayoutInstructions title={title}>
       <div className="intro">
         <div className="wrapper centered">
-          <h1>Virtual Tour Installation <strong>Instructions</strong></h1>
+          <h1>
+            Virtual Tour Installation <strong>Instructions</strong>
+          </h1>
           <p>
-            Congratulations on the launch of your virtual tour! Now let’s set you up
-            to get the most out of it.
+            Congratulations on the launch of your virtual tour! Now let’s set
+            you up to get the most out of it.
           </p>
         </div>
       </div>
 
       <nav className="instructions_nav">
-        {pageHeadingTree ? <ul>{pageHeadingTree.map(renderNodeList)}</ul> : null}
+        {pageHeadingTree ? (
+          <ul>{pageHeadingTree.map(renderNodeList)}</ul>
+        ) : null}
       </nav>
       <div ref={headingsContainerRef}>
+        <section className="wrapper centered unlocking_the_power">
+          <h2 id="unlocking-the-power" className="section-title">
+            Unlocking The Power of Your Virtual Tour
+          </h2>
+          <div className="group">
+            <header>
+              <h3
+                id="unlocking-the-power-tracking"
+                className="section-subtitle"
+              >
+                Tracking, Launching, and Attributing
+              </h3>
+              <p>
+                The <b>YouVisit Tag </b>is a script that is needed to
+                successfully collect audience insights, launch a virtual tour,
+                and measure attributions. It is a critical piece to your
+                installation, and it is imperative that the YouVisit Tag be used
+                correctly for an optimal launch and successful tracking of
+                engagement and attributions.
+              </p>
+            </header>
 
-      <section className="wrapper centered unlocking_the_power">
-        <h2 id="unlocking-the-power" className="section-title">
-          Unlocking The Power of Your Virtual Tour
-        </h2>
-        <div className="group">
-          <header>
-              <h3 id="unlocking-the-power-tracking" className="section-subtitle">
-              Tracking, Launching, and Attributing
-            </h3>
-            <p>
-              The <b>YouVisit Tag </b>is a script that is needed to successfully
-              collect audience insights, launch a virtual tour, and measure
-              attributions. It is a critical piece to your installation, and it is
-              imperative that the YouVisit Tag be used correctly for an optimal
-              launch and successful tracking of engagement and attributions.
-            </p>
-          </header>
-          
-          <div className="group_content">
+            <div className="group_content">
               <ol className="counting_steps">
                 <li className="youvisit_tag">
                   {/* <span style={yvTag}>YouVisit Tag</span> */}
                   <div className="step-content">
                     <div className="">YouVisit Tag</div>
-                      <h4>Collect Audience Insights</h4>
+                    <h4>Collect Audience Insights</h4>
+                    <p>
+                      When installed alone on a webpage, the YouVisit Tag tracks
+                      visitors{" "}
+                    </p>
+                    <h5>Partner benefits:</h5>
+                    <ul>
+                      <li>
+                        Map out how your audiences engage with different pages
+                        on your website and their activity
+                      </li>
                       <p>
-                        When installed alone on a webpage, the YouVisit Tag tracks
-                        visitors{" "}
+                        <i>
+                          This tracking is foundational to future data
+                          enhancements we are exploring around linking users
+                          throughout the EAB Network across all our offerings{" "}
+                        </i>
                       </p>
-                      <h5>Partner benefits:</h5>
-                      <ul>
-                        <li>
-                          Map out how your audiences engage with different pages on your
-                          website and their activity
-                        </li>
-                        <p>
-                          <i>
-                            This tracking is foundational to future data enhancements we
-                            are exploring around linking users throughout the EAB Network
-                            across all our offerings{" "}
-                          </i>
-                        </p>
-                      </ul>
+                    </ul>
                   </div>
                 </li>
 
@@ -220,8 +227,8 @@ const InstructionsPage = ({ data }) => {
                   <span style={embedCodeTag}>Embed Code</span>
                   <h4>Launch Virtual Tour</h4>
                   <p>
-                    To embed and launch a Virtual Tour on a webpage, the YouVisit Tag
-                    is required to be installed with a separate{" "}
+                    To embed and launch a Virtual Tour on a webpage, the
+                    YouVisit Tag is required to be installed with a separate{" "}
                     <span style={embedCodeTag}>Embed Code</span> that tells the
                     YouVisit Tag how the Virtual Tour should be rendered (width,
                     height, default destination, etc...){" "}
@@ -229,8 +236,8 @@ const InstructionsPage = ({ data }) => {
                   <h5>Partner Benefits:</h5>
                   <ul>
                     <li>
-                      Ensure proper attribution to inquiry source (your .edu site
-                      rather than YouVisit)
+                      Ensure proper attribution to inquiry source (your .edu
+                      site rather than YouVisit)
                     </li>
                     <li>
                       Ensure accurate tracking of audiences who engage with your
@@ -247,128 +254,135 @@ const InstructionsPage = ({ data }) => {
                   <span style={successTag}>Success Code</span>
                   <h4>Measure Attribution</h4>
                   <p>
-                    To quantify the impact of your Virtual Tour and show how many
-                    visitors got to a success page (i.e completed application) after
-                    visiting your Virtual Tour, the YouVisit Tag and a separate
-                    success code is required to be installed
+                    To quantify the impact of your Virtual Tour and show how
+                    many visitors got to a success page (i.e completed
+                    application) after visiting your Virtual Tour, the YouVisit
+                    Tag and a separate success code is required to be installed
                   </p>
                   <h5>Partner Benefits:</h5>
                   <ul>
                     <li>
-                      Quantify the impact of virtual tours&nbsp;by showing how many
-                      visitors&nbsp;got to a page you deem a success after visiting
-                      the Virtual Tour vs. without visiting the Virtual Tour
+                      Quantify the impact of virtual tours&nbsp;by showing how
+                      many visitors&nbsp;got to a page you deem a success after
+                      visiting the Virtual Tour vs. without visiting the Virtual
+                      Tour
                     </li>
                     <li>See the conversion lift Virtual Tour brings</li>
                   </ul>
                 </li>
-            </ol>
+              </ol>
+            </div>
           </div>
-        </div>
-        
-        <div className="group">
-          <header>
-            <h3 id="high-impact-action-steps" className="section-subtitle">High-Impact Action Steps</h3>
-          </header>
-          
-          <div className="group_content">
-            <ol>
-              <li>
-                Install On Your Website
-                <p>
-                  College websites continue to be a top focal point of student
-                  search, so make sure your virtual tour is prominently displayed.
-                </p>
-                <h5>Questions to Consider:</h5>
-                <ul>
-                  <li>Where should we have an immersive banner vs. a hyperlink?</li>
-                  <li>
-                    Where should we launch into the main experience vs. specific
-                    scenes?
-                  </li>
-                </ul>
-                <aside>
-                  <p>
-                    For the highest engagement, we recommend leveraging an
-                    eye-catching immersive banner in places, such as the body and
-                    footer of web pages, as well as hyperlinks in other relevant
-                    spots, such as the navigation menu.
-                  </p>
-                  <p>
-                    In addition, we recommend that you use immersive banners that
-                    launch into specific tour stops on relevant pages. For example,
-                    embed Athletics tour stop on Athletics page; embed Student
-                    Center/Dining Hall on Student Life, embed Residence Halls on
-                    Housing page, key program stops on relevant academic program
-                    pages, etc.)
-                  </p>
-                </aside>
-              </li>
 
-              <li>
-                Include In Your Marketing
-                <p>
-                  Consider how you can leverage your Virtual Tour to bring your
-                  marketing campaigns to life.
-                </p>
-                <h5>Questions to Consider:</h5>
-                <ul>
-                  <li>Where are we reaching out to students? &nbsp;</li>
-                  <li>How are we conducting virtual visits?&nbsp;</li>
-                  <li>
-                    How are we enabling students and families to conduct self-guided
-                    tours on campus?&nbsp;
-                  </li>
-                </ul>
-                <aside>
+          <div className="group">
+            <header>
+              <h3 id="high-impact-action-steps" className="section-subtitle">
+                High-Impact Action Steps
+              </h3>
+            </header>
+
+            <div className="group_content">
+              <ol>
+                <li>
+                  Install On Your Website
                   <p>
-                    Add the Virtual Tour to email, text, and social communications
+                    College websites continue to be a top focal point of student
+                    search, so make sure your virtual tour is prominently
+                    displayed.
                   </p>
+                  <h5>Questions to Consider:</h5>
+                  <ul>
+                    <li>
+                      Where should we have an immersive banner vs. a hyperlink?
+                    </li>
+                    <li>
+                      Where should we launch into the main experience vs.
+                      specific scenes?
+                    </li>
+                  </ul>
+                  <aside>
+                    <p>
+                      For the highest engagement, we recommend leveraging an
+                      eye-catching immersive banner in places, such as the body
+                      and footer of web pages, as well as hyperlinks in other
+                      relevant spots, such as the navigation menu.
+                    </p>
+                    <p>
+                      In addition, we recommend that you use immersive banners
+                      that launch into specific tour stops on relevant pages.
+                      For example, embed Athletics tour stop on Athletics page;
+                      embed Student Center/Dining Hall on Student Life, embed
+                      Residence Halls on Housing page, key program stops on
+                      relevant academic program pages, etc.)
+                    </p>
+                  </aside>
+                </li>
+
+                <li>
+                  Include In Your Marketing
                   <p>
-                    Host live Virtual Tour walkthroughs with a Student Ambassador
-                    and/or faculty member
+                    Consider how you can leverage your Virtual Tour to bring
+                    your marketing campaigns to life.
                   </p>
+                  <h5>Questions to Consider:</h5>
+                  <ul>
+                    <li>Where are we reaching out to students? &nbsp;</li>
+                    <li>How are we conducting virtual visits?&nbsp;</li>
+                    <li>
+                      How are we enabling students and families to conduct
+                      self-guided tours on campus?&nbsp;
+                    </li>
+                  </ul>
+                  <aside>
+                    <p>
+                      Add the Virtual Tour to email, text, and social
+                      communications
+                    </p>
+                    <p>
+                      Host live Virtual Tour walkthroughs with a Student
+                      Ambassador and/or faculty member
+                    </p>
+                    <p>
+                      Leverage self guided options available based on your
+                      partnership
+                    </p>
+                  </aside>
+                </li>
+                <li>
+                  Keep it Fresh
                   <p>
-                    Leverage self guided options available based on your partnership
+                    Meet with your Partner Success team quarterly and revisit
+                    your placement &amp; promotion strategy, informed by your
+                    evolving strategy and tour/tour stop performance.
                   </p>
-                </aside>
-              </li>
-              <li>
-                Keep it Fresh
-                <p>
-                  Meet with your Partner Success team quarterly and revisit your
-                  placement &amp; promotion strategy, informed by your evolving
-                  strategy and tour/tour stop performance.
-                </p>
-                <h5>Questions to Consider:</h5>
-                <ul>
-                  <li>
-                    Did we see spikes in performance on a particular point of
-                    interest and/or time frame?
-                  </li>
-                  <li>Have we received student feedback?</li>
-                  <li>
-                    How might it make sense to tweak the tour itself using existing
-                    content to support our evolving strategy?&nbsp;
-                  </li>
-                </ul>
-                <aside>
-                  <p>Monitor performance to optimize content</p>
-                  <p>
-                    Ask students for feedback on if the tour was easy to find or
-                    what was the most interesting about it?
-                  </p>
-                  <p>
-                    Consider new buildings or programs, seasonal events, or new
-                    voices that might resonate most with prospective students
-                  </p>
-                </aside>
-              </li>
-            </ol>
+                  <h5>Questions to Consider:</h5>
+                  <ul>
+                    <li>
+                      Did we see spikes in performance on a particular point of
+                      interest and/or time frame?
+                    </li>
+                    <li>Have we received student feedback?</li>
+                    <li>
+                      How might it make sense to tweak the tour itself using
+                      existing content to support our evolving strategy?&nbsp;
+                    </li>
+                  </ul>
+                  <aside>
+                    <p>Monitor performance to optimize content</p>
+                    <p>
+                      Ask students for feedback on if the tour was easy to find
+                      or what was the most interesting about it?
+                    </p>
+                    <p>
+                      Consider new buildings or programs, seasonal events, or
+                      new voices that might resonate most with prospective
+                      students
+                    </p>
+                  </aside>
+                </li>
+              </ol>
+            </div>
           </div>
-        </div>
-        
-
         </section>
 
         <h2 id="directly-on-website">Directly on Website</h2>
