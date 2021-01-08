@@ -7,9 +7,7 @@ const Layout = props => {
   return (
     <div className="main_container">
       <Header title={props.title} path={props.path} />
-      <div className="wrapper centered">
-        {props.children}
-      </div>
+      <div className="instructions">{props.children}</div>
       <Footer />
     </div>
   )

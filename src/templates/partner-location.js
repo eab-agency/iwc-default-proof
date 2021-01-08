@@ -10,6 +10,7 @@ export const query = graphql`
         loc_id
         name
         experience_type
+        update_date
         stops {
           stopid
           title
@@ -66,6 +67,7 @@ const Location = props => {
         location={locations.loc_id}
         showCode={showCode}
         updateDate={locations.update_date}
+        experienceType={locations.experience_type}
       />
 
       {experience_type === "vt" ? (
