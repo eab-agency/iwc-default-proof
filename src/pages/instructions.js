@@ -172,7 +172,9 @@ const InstructionsPage = ({ data }) => {
         ) : null}
       </nav>
       <div ref={headingsContainerRef}>
-        <section className="wrapper centered unlocking_the_power">
+        <section className="unlocking_the_power">
+          <div className="wrapper centered">
+
           <h2 id="unlocking-the-power" className="section-title">
             Unlocking The Power of Your Virtual Tour
           </h2>
@@ -195,82 +197,92 @@ const InstructionsPage = ({ data }) => {
             </header>
 
             <div className="group_content">
-              <ol className="counting_steps">
-                <li className="youvisit_tag">
-                  {/* <span style={yvTag}>YouVisit Tag</span> */}
-                  <div className="step-content">
-                    <div className="">YouVisit Tag</div>
-                    <h4>Collect Audience Insights</h4>
+              <div className="content-wrapper">
+                <div className="youvisit_tag step">
+                    <div className="step_graph">
+                      <div className="yvtag">YouVisit Tag</div>
+                    </div>
+                    <div className="step_description">
+                      <h4>Collect Audience Insights</h4>
+                      <p>
+                        When installed alone on a webpage, the YouVisit Tag tracks
+                        visitors
+                      </p>
+                      <h5>Partner benefits:</h5>
+                      <ul>
+                        <li>
+                          Map out how your audiences engage with different pages
+                          on your website and their activity
+                        </li>
+                      </ul>
+                      <small>
+                            This tracking is foundational to future data
+                            enhancements we are exploring around linking users
+                            throughout the EAB Network across all our offerings
+                          </small>
+                    </div>
+                </div>
+
+                <div className="yvtag-embed step">
+                  <div className="step_graph">
+                    {/* <span style={yvTag}>YouVisit Tag</span> +{" "}
+                    <span style={embedCodeTag}>Embed Code</span> */}
+                    <div className="yvtag">YouVisit Tag</div>
+                    <div className="embedcodetag">Embed Code</div>
+                  </div>
+
+                  <div className="step_description">
+                    <h4>Launch Virtual Tour</h4>
                     <p>
-                      When installed alone on a webpage, the YouVisit Tag tracks
-                      visitors{" "}
+                      To embed and launch a Virtual Tour on a webpage, the
+                      YouVisit Tag is required to be installed with a separate{" "}
+                      <span style={embedCodeTag}>Embed Code</span> that tells the
+                      YouVisit Tag how the Virtual Tour should be rendered (width,
+                      height, default destination, etc...){" "}
                     </p>
-                    <h5>Partner benefits:</h5>
+                    <h5>Partner Benefits:</h5>
                     <ul>
                       <li>
-                        Map out how your audiences engage with different pages
-                        on your website and their activity
+                        Ensure proper attribution to inquiry source (your .edu
+                        site rather than YouVisit)
                       </li>
-                      <p>
-                        <i>
-                          This tracking is foundational to future data
-                          enhancements we are exploring around linking users
-                          throughout the EAB Network across all our offerings{" "}
-                        </i>
-                      </p>
+                      <li>
+                        Ensure accurate tracking of audiences who engage with your
+                        online content in our analytics product
+                      </li>
+                      <li>
+                        Receive automatic updates when enhancements are rolled out
+                      </li>
                     </ul>
                   </div>
-                </li>
+                </div>
 
-                <li>
-                  <span style={yvTag}>YouVisit Tag</span> +{" "}
-                  <span style={embedCodeTag}>Embed Code</span>
-                  <h4>Launch Virtual Tour</h4>
-                  <p>
-                    To embed and launch a Virtual Tour on a webpage, the
-                    YouVisit Tag is required to be installed with a separate{" "}
-                    <span style={embedCodeTag}>Embed Code</span> that tells the
-                    YouVisit Tag how the Virtual Tour should be rendered (width,
-                    height, default destination, etc...){" "}
-                  </p>
-                  <h5>Partner Benefits:</h5>
-                  <ul>
-                    <li>
-                      Ensure proper attribution to inquiry source (your .edu
-                      site rather than YouVisit)
-                    </li>
-                    <li>
-                      Ensure accurate tracking of audiences who engage with your
-                      online content in our analytics product
-                    </li>
-                    <li>
-                      Receive automatic updates when enhancements are rolled out
-                    </li>
-                  </ul>
-                </li>
-
-                <li>
-                  <span style={yvTag}>YouVisit Tag</span> +{" "}
-                  <span style={successTag}>Success Code</span>
-                  <h4>Measure Attribution</h4>
-                  <p>
-                    To quantify the impact of your Virtual Tour and show how
-                    many visitors got to a success page (i.e completed
-                    application) after visiting your Virtual Tour, the YouVisit
-                    Tag and a separate success code is required to be installed
-                  </p>
-                  <h5>Partner Benefits:</h5>
-                  <ul>
-                    <li>
-                      Quantify the impact of virtual tours&nbsp;by showing how
-                      many visitors&nbsp;got to a page you deem a success after
-                      visiting the Virtual Tour vs. without visiting the Virtual
-                      Tour
-                    </li>
-                    <li>See the conversion lift Virtual Tour brings</li>
-                  </ul>
-                </li>
-              </ol>
+                <div className="yvtag-successcode step">
+                  <div className="step_graph">
+                    <span style={yvTag}>YouVisit Tag</span> +{" "}
+                    <span style={successTag}>Success Code</span>
+                  </div>
+                  <div className="step_description">
+                    <h4>Measure Attribution</h4>
+                    <p>
+                      To quantify the impact of your Virtual Tour and show how
+                      many visitors got to a success page (i.e completed
+                      application) after visiting your Virtual Tour, the YouVisit
+                      Tag and a separate success code is required to be installed
+                    </p>
+                    <h5>Partner Benefits:</h5>
+                    <ul>
+                      <li>
+                        Quantify the impact of virtual tours&nbsp;by showing how
+                        many visitors&nbsp;got to a page you deem a success after
+                        visiting the Virtual Tour vs. without visiting the Virtual
+                        Tour
+                      </li>
+                      <li>See the conversion lift Virtual Tour brings</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -382,6 +394,7 @@ const InstructionsPage = ({ data }) => {
                 </li>
               </ol>
             </div>
+          </div>
           </div>
         </section>
 

@@ -27,6 +27,7 @@
     p{
         color: white;
         @include fluidRem(font-size, 1rem, 1.3rem);
+        letter-spacing: -0.02em;
     }
   }
 
@@ -145,10 +146,8 @@
   }
 }
 
-// ==============================
-// UNLOCKING THE POWER SECTION
-
 section{
+    overflow: hidden;
     .section-title{
         @include fluidRem(font-size, 1.2rem, 2.2rem); 
         font-family: $f-serif;
@@ -160,8 +159,6 @@ section{
          header{
              width: 100%;
              max-width: $mq-700;
-            //  display: flex;
-            //  flex-direction: column;
 
              .section-subtitle{
                 position:relative;
@@ -187,15 +184,24 @@ section{
          }
 
          .group_content{
-             .counting_steps{
+             .content-wrapper{
                  list-style: none;
                  margin: 0;
                  counter-reset: tags_steps;
-                 li{
+                 .step{
                     counter-increment: tags_steps;
+                    // margin: 2em 0;
+                    @include fluidRem(margin, 2.5rem 0, 5rem 0);
+                    position: relative;
 
                     &::before{
                         content: counter(tags_steps);
+                        @include fluidRem(font-size, 3rem, 6rem);
+                        color: $c-primary-orange;
+                        font-weight: 800;
+                        position: absolute;
+                        top: 0;
+                        line-height: 0.8;
                     }
                  }
              }
@@ -203,6 +209,239 @@ section{
      }
 }
 
+.yvtag{
+    display: inline-block;
+    padding: 0.3em 0.5em;
+    border-radius: 0.2em;
+    font-weight: 700;
+    color: white;
+    background: $c-primary-blue-dk; 
+}
+
+.embedcodetag{
+    display: inline-block;
+    padding: 0.3em 0.5em;
+    border-radius: 0.2em;
+    font-weight: 700;
+    color: white;
+    background: $c-primary-alt-blue; 
+}
+
+.step_description{
+    display: block;
+    position: relative;
+    background: lighten($c-secondary-blue-5, 15%);
+    width: 60%;
+    @include fluidRem(padding, 0.5rem, 3rem);
+
+    &::before{
+        content:"";
+        display: block;
+        width: 100vw;
+        height: 100%;
+        background: lighten($c-secondary-blue-5, 15%);
+        position: absolute;
+        top: 0;
+    }
+
+    h4{
+        @include fluidRem(font-size, 1.1rem, 1.5rem);
+        color: $c-primary-blue-dk;
+        font-family: $f-sans;
+        margin-bottom: 0.3em;
+    }
+
+    h5{
+        @include fluidRem(font-size, 0.95rem, 1.1rem);
+        font-family: $f-sans;
+        margin-bottom: 0.3em;
+    }
+
+    small{
+        line-height: 1.2;
+        font-style: italic;
+    }
+
+    ul{
+        list-style: none;
+        margin: 0;
+        li{
+            position: relative;
+            padding-left: 1.5em;
+
+            &::before{
+                content: $i-checkmark;
+                font-family: $f-icons;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0.1em;
+                font-size: 0.8em;
+            }
+        }
+    }
+}
+
+// ==============================
+// UNLOCKING THE POWER SECTION
+
 .unlocking_the_power{
-    
+    .step{
+        display: flex;
+
+        .step_graph{
+            display: block;
+            width: 40%
+        }
+    }
+    h4{
+        padding-left: 2.1em;
+        position: relative;
+        &::before{
+            content: $i-squarecheckmark;
+            font-family: $f-icons;
+            font-size: 2em;
+            position: absolute;
+            left: 0;
+            top: -0.5em;
+        }
+    }
+    .youvisit_tag{
+        &::before{
+            right: 61%;
+        }
+        .step_graph{
+            position: relative;
+            &::before{
+                content: $i-document;
+                font-family: $f-icons;
+                color: $c-secondary-blue-1;
+                font-size: 6em;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            &::after{
+                content:"PAGE A";
+                display: block;
+                position: absolute;
+                font-size: 0.9rem;
+                font-weight: 800;
+                text-align: center;
+                line-height: 1;
+                width: 3em;
+                top: 42%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+
+            .yvtag{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+        }
+        .step_description{
+            &::before{
+                left: 99.8%;
+            }
+            h4{
+                &::before{
+                    content: $i-squarecheckmark;
+                }
+            }
+        }
+    }
+    .yvtag-embed{
+        flex-direction: row-reverse;
+        &::before{
+            left: 61%;
+        }
+        .step_graph{
+            position: relative;
+            &::before{
+                content: $i-document;
+                font-family: $f-icons;
+                color: $c-secondary-blue-1;
+                font-size: 6em;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            &::after{
+                content:"PAGE B";
+                display: block;
+                position: absolute;
+                font-size: 0.9rem;
+                font-weight: 800;
+                text-align: center;
+                line-height: 1;
+                width: 3em;
+                top: 42%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+
+            .yvtag{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+        }
+        .step_description{
+            &::before{
+                right: 99.8%;
+            }
+            
+            h4{
+                &::before{
+                    content: $i-squarecheckmark;
+                }
+            }
+        }
+    }
+    .yvtag-successcode{
+        &::before{
+            right: 61%;
+        }
+        .step_graph{
+            position: relative;
+            &::before{
+                content: $i-document;
+                font-family: $f-icons;
+                color: $c-secondary-blue-1;
+                font-size: 6em;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            &::after{
+                content:"PAGE C";
+                display: block;
+                position: absolute;
+                font-size: 0.9rem;
+                font-weight: 800;
+                text-align: center;
+                line-height: 1;
+                width: 3em;
+                top: 42%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+
+            .yvtag{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+        }
+        .step_description{
+            &::before{
+                left: 99.8%;
+            }
+        }
+    }   
 }

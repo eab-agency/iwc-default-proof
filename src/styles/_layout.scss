@@ -105,6 +105,8 @@
           @include fluidRem(font-size, 1rem, 1.4rem);
           color: $c-black;
           font-weight: 500;
+          font-family: $f-sans;
+          letter-spacing: -0.02em;
         }
         
         .location_data{

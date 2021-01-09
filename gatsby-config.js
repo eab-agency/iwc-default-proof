@@ -21,10 +21,10 @@ module.exports = {
         fonts: [
           `Montserrat\:300,500,600,700,800`,
           `Hepta Slab\:600`, // you can also specify font weights and styles
-          `sans-serif`,
         ],
         display: "swap",
       },
     },
+    
   ],
 }
