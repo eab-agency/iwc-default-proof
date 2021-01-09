@@ -66,7 +66,7 @@ const Location = props => {
   const locations = props.data.yv.locations
 
   return (
-    <Layout title={"INTERNAL: " + institution.name}>
+    <Layout title={"INTERNAL: " + institution.name} locations={locations}>
       <h2>{locations.name}</h2>
       <IWCModifyForm
         updateWidth={setWidth}

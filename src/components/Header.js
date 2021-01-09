@@ -5,7 +5,7 @@ import eablogo from "../images/eab-logo-color.svg"
 import Navigation from "./Navigation"
 import "../styles/index.scss"
 
-const Header = ({ title }) => {
+const Header = ({ title, locations }) => {
   const [pageUrl, setPage] = useState("landing")
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Header = ({ title }) => {
           {title}
         </Link>
       </div>
-      <Navigation />
+      <Navigation locations={locations} />
     </header>
   )
 }

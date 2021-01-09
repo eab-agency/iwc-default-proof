@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 
-
 const IndexPage = ({ data }) => {
   const institution = data.yv.institutions
   // turn LOCATIONS into an array
@@ -25,7 +24,7 @@ const IndexPage = ({ data }) => {
   }
 
   return (
-    <Layout title={institution.name}>
+    <Layout title={institution.name} locations={locations}>
       <h1 className="institution_name">{institution.name}</h1>
       <ol className="no-numbers">
         {locations.map(location => {
@@ -39,14 +38,11 @@ const IndexPage = ({ data }) => {
                   <h2>{location.name}</h2>
                   <div className="location_data">
                     <div className="update_date">{location.update_date}</div>
-                    <div className="experience_type" data-experience-type={location.experience_type}>
-                      
-                      
-                      
+                    <div
+                      className="experience_type"
+                      data-experience-type={location.experience_type}
+                    >
                       {location.experience_type}
-                    
-                    
-                    
                     </div>
                   </div>
                 </div>
@@ -62,21 +58,22 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-         query($instID: String) {
-           yv {
-             institutions(instID: $instID) {
-               locations {
-                 loc_id
-                 name
-                 update_date
-                 experience_type
-                 cover_photo {
-                   thumb
-                   full
-                 }
-               }
-               name
-             }
-           }
-         }
-       `
+  query($instID: String) {
+    yv {
+      institutions(instID: $instID) {
+        inst_id
+        name
+        locations {
+          loc_id
+          name
+          update_date
+          experience_type
+          cover_photo {
+            thumb
+            full
+          }
+        }
+      }
+    }
+  }
+`
