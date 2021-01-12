@@ -11,7 +11,7 @@ const Layout = props => {
         path={props.path}
         locations={props.locations}
       />
-      <div className="wrapper centered">{props.children}</div>
+      <div className="instructions">{props.children}</div>
       <Footer />
     </div>
   )

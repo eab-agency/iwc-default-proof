@@ -1,16 +1,37 @@
 import React from "react"
+import { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import eablogo from "../images/eab-logo-color.svg"
+import Navigation from "./Navigation"
+import "../styles/index.scss"
 
-import headerStyles from "./header.module.scss"
+const Header = ({ title, locations }) => {
+  const [pageUrl, setPage] = useState("landing")
 
-const Header = ({ title }) => {
+  useEffect(() => {
+    const url = window.location.href
+    if (url.includes("location") || url.includes("instructions")) {
+      setPage("not-landing")
+    } else {
+      setPage("landing")
+    }
+  }, [])
+
   return (
-    <header className={headerStyles.header}>
-      <h1>
-        <Link className={headerStyles.title} to="/">
+    <header
+      className="site_header"
+      data-page-name={pageUrl === "landing" ? "landing-page" : "location"}
+    >
+      <div className="eab_logo">
+        <img src={eablogo} alt="EAB Global" />
+        <div className="agency_services">Agency Services</div>
+      </div>
+      <div className="partner">
+        <Link className="partner_name" to="/">
           {title}
         </Link>
-      </h1>
+      </div>
+      <Navigation locations={locations} />
     </header>
   )
 }

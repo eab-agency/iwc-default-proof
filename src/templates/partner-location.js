@@ -10,6 +10,7 @@ export const query = graphql`
         loc_id
         name
         experience_type
+        update_date
         stops {
           stopid
           title
@@ -18,6 +19,13 @@ export const query = graphql`
       institutions(instID: $instID) {
         inst_id
         name
+        locations {
+          experience_type
+          privacy
+          status
+          loc_id
+          name
+        }
       }
     }
   }
@@ -28,7 +36,8 @@ const Location = props => {
   const onClick = () => setOpen(!open)
 
   const institution = props.data.yv.institutions
-  const locations = props.data.yv.locations
+  const location = props.data.yv.locations
+  const locations = props.data.yv.institutions.locations
   const showCode = process.env.GATSBY_SHOWCODE
   const experience_type = props.data.yv.locations.experience_type
   const allStops = props.data.yv.locations.stops
@@ -44,7 +53,7 @@ const Location = props => {
             title={stop.title}
             institution={institution.inst_id}
             type=""
-            location={locations.loc_id}
+            location={location.loc_id}
             loadStopOnly="1"
             showCode={showCode}
             stopId={stop.stopid}
@@ -55,18 +64,28 @@ const Location = props => {
   }
 
   return (
-    <Layout title={institution.name}>
-      <h2>{locations.name}</h2>
+    <Layout title={institution.name} locations={locations}>
+      <header className="location_header">
+        <div className="location">
+          <div className="experience_type"  data-experience-type={location.experience_type}>
+            {location.experience_type}
+          </div>
+          <h1 className="location_name">{location.name}</h1>
+        </div>
+        <div className="update_date">{location.update_date}</div>
+      </header>
+      
       <YouVisitIWC
         containerWidth="100%"
         containerHeight="500px"
-        title={locations.name}
+        title={location.name}
         institution={institution.inst_id}
         type="inline-embed"
-        location={locations.loc_id}
+        location={location.loc_id}
         showCode={showCode}
+        updateDate={location.update_date}
+        experienceType={location.experience_type}
       />
-
       {experience_type === "vt" ? (
         <button value="Show Stops" onClick={onClick}>
           {open ? "Hide Stops" : "Show Stops"}

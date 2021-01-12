@@ -57,17 +57,20 @@ const MediaItems = ({ media_item }) => {
   )
 }
 
-const Location = props => {
+const InternalLocation = props => {
   const [width, setWidth] = useState()
   const [type, setType] = useState("inline-embed")
   const [height, setHeight] = useState(250)
 
   const institution = props.data.yv.institutions
-  const locations = props.data.yv.locations
+  const location = props.data.yv.locations
+  const locations = props.data.yv.institutions.locations
+
+  console.log("___________________locations", locations)
 
   return (
-    <Layout title={"INTERNAL: " + institution.name}>
-      <h2>{locations.name}</h2>
+    <Layout title={"INTERNAL: " + institution.name} locations={locations}>
+      <h2>{location.name}</h2>
       <IWCModifyForm
         updateWidth={setWidth}
         updateType={setType}
@@ -76,19 +79,19 @@ const Location = props => {
       <YouVisitIWC
         containerWidth={width}
         containerHeight={height}
-        title={locations.name}
+        title={location.name}
         institution={institution.inst_id}
         type={type}
-        location={locations.loc_id}
+        location={location.loc_id}
         showCode="true"
-        description={locations.description}
-        uploadDate={locations.live_date}
-        thumb={locations.cover_photo.thumb}
+        description={location.description}
+        uploadDate={location.live_date}
+        thumb={location.cover_photo.thumb}
       />
       <h2>Interactive Media Elements</h2>
 
       <ol className="panorama">
-        {locations.panoramas.map(panorama => {
+        {location.panoramas.map(panorama => {
           return (
             <li key={panorama.id}>
               <h2>{panorama.mediaType}</h2>
@@ -105,12 +108,12 @@ const Location = props => {
 
       {/* <HotSpot data={locations} /> */}
 
-      <pre>{JSON.stringify(locations, null, 4)}</pre>
+      <pre>{JSON.stringify(location, null, 4)}</pre>
     </Layout>
   )
 }
 
-export default Location
+export default InternalLocation
 
 export const query = graphql`
   query($locID: String, $instID: String) {
@@ -156,6 +159,13 @@ export const query = graphql`
       institutions(instID: $instID) {
         inst_id
         name
+        locations {
+          experience_type
+          privacy
+          status
+          loc_id
+          name
+        }
       }
     }
   }
