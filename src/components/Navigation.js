@@ -8,11 +8,13 @@ const Navigation = ({ locations }) => {
   const [toggle, setToggle] = useState(false)
   const onClick = () => setToggle(!toggle)
 
-  const navItems = locations.map((location, index) => (
-    <li key={index}>
-      <Link to={`/location/${location.loc_id}`}>{location.name}</Link>
-    </li>
-  ))
+  const navItems =
+    locations &&
+    locations.map((location, index) => (
+      <li key={index}>
+        <Link to={`/location/${location.loc_id}`}>{location.name}</Link>
+      </li>
+    ))
 
   return (
     <div className={toggle ? "navBar show-nav" : "navBar"}>
