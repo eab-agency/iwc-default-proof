@@ -6,33 +6,7 @@ import { YouVisitIWC } from "@ux_bob/yv-iwc"
 
 // import Layout from "../components/Layout"
 import LayoutInstructions from "../components/LayoutInstructions"
-import SelectInput from "@material-ui/core/Select/SelectInput"
-
-const yvTag = {
-  backgroundColor: "#00355f",
-  color: "white",
-  borderRadius: "5px",
-  display: "inline-block",
-  padding: ".25em .5em",
-  fontWeight: "bold",
-}
-
-const embedCodeTag = {
-  backgroundColor: "#00b1b0",
-  color: "white",
-  borderRadius: "5px",
-  display: "inline-block",
-  padding: ".25em .5em",
-  fontWeight: "bold",
-}
-const successTag = {
-  backgroundColor: "#ed8b00",
-  color: "white",
-  borderRadius: "5px",
-  display: "inline-block",
-  padding: ".25em .5em",
-  fontWeight: "bold",
-}
+// import SelectInput from "@material-ui/core/Select/SelectInput"
 
 const InstructionsPage = ({ data }) => {
   const headingsContainerRef = useRef()
@@ -157,7 +131,9 @@ const InstructionsPage = ({ data }) => {
                   id="unlocking-the-power-tracking"
                   className="section-subtitle"
                 >
-                  <span className="anchor">Tracking, Launching, and Attributing</span>
+                  <span className="anchor">
+                    Tracking, Launching, and Attributing
+                  </span>
                 </h3>
                 <p>
                   The <b>YouVisit Tag </b>is a script that is needed to
@@ -266,7 +242,7 @@ const InstructionsPage = ({ data }) => {
             <div className="group high-impact-action">
               <header>
                 <h3 id="high-impact-action-steps" className="section-subtitle">
-                <span className="anchor">High-Impact Action Steps</span>
+                  <span className="anchor">High-Impact Action Steps</span>
                 </h3>
               </header>
 
@@ -394,7 +370,7 @@ const InstructionsPage = ({ data }) => {
             <div className="group">
               <header>
                 <h3 id="directly-on-website-embed" className="section-subtitle">
-                <span className="anchor">Embed and Launch</span>
+                  <span className="anchor">Embed and Launch</span>
                 </h3>
                 <p>
                   The <span className="embedcodetag">Embed Code</span> and
@@ -465,7 +441,7 @@ const InstructionsPage = ({ data }) => {
                 <p>
                   Once the virtual tour is successfully embedded on your
                   website, you will want to track the success. Adding the{" "}
-                  <span style={successTag}>SUCCESS CODE</span> and{" "}
+                  <span className="successcode">SUCCESS CODE</span> and{" "}
                   <span className="yvtag">YV TAG</span> to your website is as
                   simple as adding 2 lines of javascript code in your funnel
                   confirmation page.
@@ -577,7 +553,107 @@ const InstructionsPage = ({ data }) => {
                   <ul className="embed_steps">
                     <li>
                       <div className="step_content">
-                        <a href="https://tagmanager.google.com" target="_blank">
+                        <a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  href="https://tagmanager.google.com"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  target="_blank"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  rel="noreferrer"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                >
                           https://tagmanager.google.com
                         </a>
                       </div>
@@ -641,16 +717,21 @@ const InstructionsPage = ({ data }) => {
 
             <div className="group">
               <header>
-              <h3 id="google-tag-manager-launching" className="section-subtitle"><span className="anchor">Launching</span></h3>
-              <p>
-                Once the is <span className="yvtag">YV TAG</span> running on your
-                site, you need to add the{" "}
-                <span className="embedcodetag">Embed Code</span>
-                into the html of the pages you want your virtual tour to display on.
-                Your virtual tour can be embedded in multiple locations per page, on
-                multiple pages, and there are two ways to launch the virtual tour on
-                your website:
-              </p>
+                <h3
+                  id="google-tag-manager-launching"
+                  className="section-subtitle"
+                >
+                  <span className="anchor">Launching</span>
+                </h3>
+                <p>
+                  Once the is <span className="yvtag">YV TAG</span> running on
+                  your site, you need to add the{" "}
+                  <span className="embedcodetag">Embed Code</span>
+                  into the html of the pages you want your virtual tour to
+                  display on. Your virtual tour can be embedded in multiple
+                  locations per page, on multiple pages, and there are two ways
+                  to launch the virtual tour on your website:
+                </p>
               </header>
               <div className="group_content">
                 <div className="content">
@@ -659,36 +740,45 @@ const InstructionsPage = ({ data }) => {
                   <ul className="embed_steps">
                     <li>
                       <div className="step_content">
-                      Write text on the page where you’d like the immersive banner to display – Ex: “Virtual Tour”
+                        Write text on the page where you’d like the immersive
+                        banner to display – Ex: “Virtual Tour”
                       </div>
                     </li>
                     <li>
                       <div className="step_content">
-                      Hyperlink the text on your page to the below <span className="embedcodetag">Embed Code</span> URL:
+                        Hyperlink the text on your page to the below{" "}
+                        <span className="embedcodetag">Embed Code</span> URL:
                       </div>
                       <PrismCode
-                                    code={`
+                        code={`
                       <a alt="Launch Experience" href="https://www.youvisit.com/#/vte/?data-platform=v&data-link-type=immersive&data-inst=${datum.inst_id}&data-image-width=100%&data-image-height=100%&">Launch Experience</a>
                       `}
-                                    language="html"
-                                  />
+                        language="html"
+                      />
                     </li>
                     <li>
-                      <div className="step_content">Done. Now the tag will search the page, see the link, and transform it into an immersive banner</div>
+                      <div className="step_content">
+                        Done. Now the tag will search the page, see the link,
+                        and transform it into an immersive banner
+                      </div>
                     </li>
                   </ul>
-                  
                 </div>
               </div>
             </div>
 
             <div className="group">
               <header>
-                <h3 id="google-tag-manager-tracking-success" className="section-subtitle"><span className="anchor">Tracking Success</span></h3>
+                <h3
+                  id="google-tag-manager-tracking-success"
+                  className="section-subtitle"
+                >
+                  <span className="anchor">Tracking Success</span>
+                </h3>
                 <p>
-                  Once the <span className="yvtag">YV TAG</span> is running on your site
-                  and you’ve successfully launched your virtual tour, you will want to
-                  track the success via the Success Tag.
+                  Once the <span className="yvtag">YV TAG</span> is running on
+                  your site and you’ve successfully launched your virtual tour,
+                  you will want to track the success via the Success Tag.
                 </p>
               </header>
               <div className="group_content">
@@ -702,11 +792,11 @@ const InstructionsPage = ({ data }) => {
                     </li>
                     <li>
                       <div className="step_content">
-                        URL’s for CTA targets (typically a form) – EX: URL of “thank you” page
+                        URL’s for CTA targets (typically a form) – EX: URL of
+                        “thank you” page
                       </div>
                     </li>
                   </ul>
-                  
                 </div>
 
                 <div className="content">
@@ -714,13 +804,112 @@ const InstructionsPage = ({ data }) => {
                   <ul className="embed_steps">
                     <li>
                       <div className="step_content">
-                        <a href="https://tagmanager.google.com" target="_blank">
+                        <a
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                          href="https://tagmanager.google.com"
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                          target="_blank"
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                          rel="noreferrer"
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        >
                           https://tagmanager.google.com
                         </a>
                       </div>
                     </li>
                   </ul>
-                  
                 </div>
 
                 <div className="content">
@@ -730,32 +919,30 @@ const InstructionsPage = ({ data }) => {
                   <ul className="embed_steps">
                     <li>
                       <div className="step_content">
-                      Add a title to the tag – Ex: “Virtual Tour Success”
+                        Add a title to the tag – Ex: “Virtual Tour Success”
                       </div>
                     </li>
                     <li>
-                      <div className="step_content">
-                      Tag Configuration
-                      </div>
+                      <div className="step_content">Tag Configuration</div>
                       <PrismCode
-                                    code={`
+                        code={`
                       <script>
                           var yv_launch_success=true, yv_instid=123, yv_locid=123;
                       </script>
                       <script src="https://www.youvisit.com/tour/Success/js3"></script>
                       `}
-                                    language="html"
-                                  />
+                        language="html"
+                      />
                       <div className="important_note">
-                      Paste the provided into the HTML text area:
+                        Paste the provided into the HTML text area:
                       </div>
                     </li>
                     <li>
-                      <div className="step_content">
-                      Triggering
-                      </div>
+                      <div className="step_content">Triggering</div>
                       <div className="important_note">
-                      Add the URLs of pages that you have deemed a ‘success’ or a conversion - EX: “Schedule campus visit” confirmation page
+                        Add the URLs of pages that you have deemed a ‘success’
+                        or a conversion - EX: “Schedule campus visit”
+                        confirmation page
                       </div>
                     </li>
                   </ul>
@@ -768,30 +955,33 @@ const InstructionsPage = ({ data }) => {
 
         <section className="directly_on_website">
           <div className="wrapper centered">
-            <h2 id="additional-embed-codes" className="section-title">Additional Embed Codes</h2>
+            <h2 id="additional-embed-codes" className="section-title">
+              Additional Embed Codes
+            </h2>
             <div className="group">
               <header>
-                  <p>
-                    You can embed your Virtual Tour to launch directly into specific
-                    scenes. Using the same installation methods outlined in this document,
-                    alter the code with custom location id’s to launch directly into the
-                    destination relevant to the page it lives on.{" "}
-                  </p>
+                <p>
+                  You can embed your Virtual Tour to launch directly into
+                  specific scenes. Using the same installation methods outlined
+                  in this document, alter the code with custom location id’s to
+                  launch directly into the destination relevant to the page it
+                  lives on.{" "}
+                </p>
               </header>
               <div className="group_content">
                 <div className="content">
                   <h4>Example</h4>
                   <p>
-                    For example, embed your tour so that it launches directly into your
-                    “Music Program” destination from your Music Program page.
+                    For example, embed your tour so that it launches directly
+                    into your “Music Program” destination from your Music
+                    Program page.
                   </p>
-                
                 </div>
                 <div className="content">
                   <h4>Embed Codes</h4>
                   <p>
-                    See custom <span className="embedcodetag">Embed Codes</span> for each
-                    Destination on your virtual tour below.
+                    See custom <span className="embedcodetag">Embed Codes</span>{" "}
+                    for each Destination on your virtual tour below.
                   </p>
                   <table>
                     <thead>
@@ -809,10 +999,7 @@ const InstructionsPage = ({ data }) => {
           </div>
           {/* Wrapper Centered */}
         </section>
-
-        
-
-    </div>
+      </div>
     </LayoutInstructions>
   )
 }
