@@ -12,7 +12,7 @@ const Navigation = ({ locations }) => {
   useEffect(() => {
     const url = window.location.href
     if (url.includes("internal")) {
-      setPage("internal")
+      setPage("/internal")
     } else {
       setPage("")
     }
@@ -23,7 +23,9 @@ const Navigation = ({ locations }) => {
     locations &&
     locations.map((location, index) => (
       <li key={index}>
-        <Link to={`/${pageUrl}/location/${location.loc_id}`}>{location.name}</Link>
+        <Link to={`${pageUrl}/location/${location.loc_id}`}>
+          {location.name}
+        </Link>
       </li>
     ))
 
