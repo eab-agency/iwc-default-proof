@@ -49,6 +49,10 @@ nav[role="navigation"]{
                 &:hover, &:focus{
                     background: $c-primary-blue-lt;
                 }
+
+                &[aria-current="page"]{
+                    color: lighten($c-secondary-blue-2, 10%) !important;
+                }
             }
 
             ul{
