@@ -72,15 +72,10 @@ const InstructionsPage = ({ data }) => {
         <tr key={index}>
           <td>
             {stop.title}
-            <YouVisitIWC
-              containerWidth="100%"
-              containerHeight="200px"
-              title={stop.title}
-              institution={datum.inst_id}
-              type="inline-embed"
-              location={locations.loc_id}
-              dataStopid={stop.stopid}
-            />
+
+            <figure>
+              <img src={stop.panoramas[0].smallurl} alt={stop.title} />
+            </figure>
           </td>
           <td>
             {/* <PrismCode code={immersiveBannerCode} language="html" /> */}
@@ -803,7 +798,6 @@ const InstructionsPage = ({ data }) => {
                       <tbody>{stopsCodes}</tbody>
                     </table>
                   </div>
-                 
                 </div>
               </div>
             </div>
@@ -816,7 +810,6 @@ const InstructionsPage = ({ data }) => {
 }
 
 export default InstructionsPage
-
 
 export const query = graphql`
   query($instID: String) {
