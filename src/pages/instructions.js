@@ -178,7 +178,8 @@ const InstructionsPage = ({ data }) => {
                     <div className="step_description">
                       <h4>Collect Audience Insights</h4>
                       <p>
-                        When installed alone on a webpage, the <strong>YouVisit Tag</strong> tracks visitors
+                        When installed alone on a webpage, the{" "}
+                        <strong>YouVisit Tag</strong> tracks visitors
                       </p>
                       <h5>Partner benefits:</h5>
                       <ul>
@@ -205,8 +206,11 @@ const InstructionsPage = ({ data }) => {
                       <h4>Launch Virtual Tour</h4>
                       <p>
                         To embed and launch a Virtual Tour on a webpage, the
-                        <strong>YouVisit Tag</strong> is required to be installed with a separate
-                        <strong>Embed Code</strong> that tells the YouVisit Tag how the Virtual Tour should be rendered (width, height, default destination, etc...)
+                        <strong>YouVisit Tag</strong> is required to be
+                        installed with a separate
+                        <strong>Embed Code</strong> that tells the YouVisit Tag
+                        how the Virtual Tour should be rendered (width, height,
+                        default destination, etc...)
                       </p>
                       <h5>Partner Benefits:</h5>
                       <ul>
@@ -237,8 +241,9 @@ const InstructionsPage = ({ data }) => {
                         To quantify the impact of your Virtual Tour and show how
                         many visitors got to a success page (i.e completed
                         application) after visiting your Virtual Tour, the
-                        <strong>YouVisit Tag</strong> and a separate <strong>Success Code</strong> is required to
-                        be installed
+                        <strong>YouVisit Tag</strong> and a separate{" "}
+                        <strong>Success Code</strong> is required to be
+                        installed
                       </p>
                       <h5>Partner Benefits:</h5>
                       <ul>
@@ -267,7 +272,6 @@ const InstructionsPage = ({ data }) => {
 
               <div className="group_content">
                 <div className="content-wrapper">
-                
                   <div className="step instal_on_website">
                     <div className="step_data">
                       <h4>Install On Your Website</h4>
@@ -340,25 +344,27 @@ const InstructionsPage = ({ data }) => {
                   </div>
 
                   <div className="step keep_it_fresh">
-                  <div className="step_data">
-                    <h4>Keep it Fresh</h4>
-                    <p>
-                      Meet with your Partner Success team quarterly and revisit
-                      your placement &amp; promotion strategy, informed by your
-                      evolving strategy and tour/tour stop performance.
-                    </p>
-                    <h5>Questions to Consider:</h5>
-                    <ul>
-                      <li>
-                        Did we see spikes in performance on a particular point
-                        of interest and/or time frame?
-                      </li>
-                      <li>Have we received student feedback?</li>
-                      <li>
-                        How might it make sense to tweak the tour itself using
-                        existing content to support our evolving strategy?&nbsp;
-                      </li>
-                    </ul>
+                    <div className="step_data">
+                      <h4>Keep it Fresh</h4>
+                      <p>
+                        Meet with your Partner Success team quarterly and
+                        revisit your placement &amp; promotion strategy,
+                        informed by your evolving strategy and tour/tour stop
+                        performance.
+                      </p>
+                      <h5>Questions to Consider:</h5>
+                      <ul>
+                        <li>
+                          Did we see spikes in performance on a particular point
+                          of interest and/or time frame?
+                        </li>
+                        <li>Have we received student feedback?</li>
+                        <li>
+                          How might it make sense to tweak the tour itself using
+                          existing content to support our evolving
+                          strategy?&nbsp;
+                        </li>
+                      </ul>
                     </div>
                     <aside className="step_description">
                       <p>Monitor performance to optimize content</p>
@@ -373,192 +379,277 @@ const InstructionsPage = ({ data }) => {
                       </p>
                     </aside>
                   </div>
-                
                 </div>
               </div>
             </div>
           </div>
         </section>
-        
 
         <section className="directly_on_website">
           <div className="wrapper centered">
-            <h2 id="directly-on-website" className="section-title">Directly on Website</h2>
+            <h2 id="directly-on-website" className="section-title">
+              Directly on Website
+            </h2>
 
             <div className="group">
               <header>
-                <h3 id="directly-on-website-embed" className="section-subtitle">Embed and Launch</h3>
+                <h3 id="directly-on-website-embed" className="section-subtitle">
+                  Embed and Launch
+                </h3>
                 <p>
-                      The <span className="embedcodetag">Embed Code</span> and 
-                      <span className="yvtag">YV TAG</span>
-                      can be directly embedded in multiple locations per page, on multiple
-                      pages, and there are two ways to launch the virtual tour on your
-                      website:
-                    </p>
+                  The <span className="embedcodetag">Embed Code</span> and
+                  <span className="yvtag">YV TAG</span>
+                  can be directly embedded in multiple locations per page, on
+                  multiple pages, and there are two ways to launch the virtual
+                  tour on your website:
+                </p>
               </header>
               <div className="group_content">
-                  <div className="content">
-                    <h4>Immersive Banner</h4> 
-                    
-                    <ul className="embed_steps">
-                      <li>
-                        {stops[0]}
-                        <div className="step_content">
-                          Place this <span className="embedcodetag">Embed Code</span> on your respective pages to install the experience
-                        </div>
-                        <PrismCode
-                          code={`
-                      <a alt="Launch Experience" href="https://www.youvisit.com/#/vte/?data-platform=v&data-link-type=immersive&data-inst=${datum.inst_id}&data-image-width=100%&data-image-height=100%&">Launch Experience</a>`}
-                          language="html"
-                        />
-                        <div className="change_note">
-                          <p>Change the <strong>%</strong> to alter the size of the banner</p>
-                        </div>
-                      </li>
-                      <li>
-                      <div className="step_content">Place the <span className="yvtag">YV TAG</span> above the{" "}
-                        <code>&lt;/body&gt;</code>
-                        tag on each page you place the code</div>
-                        <PrismCode code={yvcode} language="html" />
-                        <p>
-                          <b>The script must go below the link to successfully launch </b>
-                        </p>
-                      </li>
-                    </ul>
+                <div className="content">
+                  <h4>Immersive Banner</h4>
 
-                    <div className="need_help">
-                      <p>
-                        Need more help?&nbsp;
-                      </p>
-                      <a href="https://www.youvisit.com/squarespace-embed/">View our instructional video</a>
-                    </div>
+                  <ul className="embed_steps">
+                    <li>
+                      {stops[0]}
+                      <div className="step_content">
+                        Place this{" "}
+                        <span className="embedcodetag">Embed Code</span> on your
+                        respective pages to install the experience
+                      </div>
+                      <PrismCode
+                        code={`
+                      <a alt="Launch Experience" href="https://www.youvisit.com/#/vte/?data-platform=v&data-link-type=immersive&data-inst=${datum.inst_id}&data-image-width=100%&data-image-height=100%&">Launch Experience</a>`}
+                        language="html"
+                      />
+                      <div className="important_note">
+                        <p>
+                          Change the <strong>%</strong> to alter the size of the
+                          banner
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="step_content">
+                        Place the <span className="yvtag">YV TAG</span> above
+                        the <code>&lt;/body&gt;</code>
+                        tag on each page you place the code
+                      </div>
+                      <PrismCode code={yvcode} language="html" />
+                      <div className="important_note">
+                        <p>The script <strong>must go</strong> below the link to successfully
+                          launch</p>
+                        </div>
+                    </li>
+                  </ul>
+
+                  <div className="need_help">
+                    <p>Need more help?&nbsp;</p>
+                    <a href="https://www.youvisit.com/squarespace-embed/">
+                      View Our Instructional Video
+                    </a>
                   </div>
                 </div>
               </div>
-              {/* =============================================== */}
-              <div className="group">
-                <header>
-                  <h3 id="directly-on-website-tracking-success" className="section-subtitle">Tracking Success</h3>
-                  <p>
-                    Once the virtual tour is successfully embedded on your website, you
-                    will want to track the success. Adding the{" "}
-                    <span style={successTag}>SUCCESS CODE</span> and{" "}
-                    <span className="yvtag">YV TAG</span> to your website is as simple as
-                    adding 2 lines of javascript code in your funnel confirmation page.
-                  </p>
-                </header>
-                <div className="group_content">
+            </div>
+            {/* =============================================== */}
+            <div className="group">
+              <header>
+                <h3
+                  id="directly-on-website-tracking-success"
+                  className="section-subtitle"
+                >
+                  Tracking Success
+                </h3>
+                <p>
+                  Once the virtual tour is successfully embedded on your
+                  website, you will want to track the success. Adding the{" "}
+                  <span style={successTag}>SUCCESS CODE</span> and{" "}
+                  <span className="yvtag">YV TAG</span> to your website is as
+                  simple as adding 2 lines of javascript code in your funnel
+                  confirmation page.
+                </p>
+              </header>
+              <div className="group_content">
+                <div className="content">
                   <h4>Installation</h4>
-                          <ol>
-                            <li>
-                              URLS for Call to Action targets (typically a form) - Ex: URL of a
-                              form complete 'thank you' page
-                              <p>
-                                <b>Paste the provided script tag above the body tag:</b>
-                              </p>
-                              <PrismCode
-                                code={`
-                  <script>
-                      var yv_launch_success=true,
-                      yv_instid=${institutionID},
-                      yv_locid=${firstLocation};
-                  </script>
-                  <script src="https://www.youvisit.com/tour/Success/js3"></script>
-                  `}
-                                language="html"
-                              />
-                            </li>
-                          </ol>
-                </div>
-                <div>
-                            <h4>Advanced Instructions</h4>
-                    <p>
-                      If you don't have a success/confirmation page or need to call the
-                      success tag on demand, the YouVisit script can accommodate such
-                      scenarios. For example, if you show Javascript confirmation pop-up
-                      rather than forwarding the user to a success page after registering,
-                      then you can follow these steps to call the success tag on demand.
-                    </p>
-                    <ol>
+                  <ul className="embed_steps">
                       <li>
-                        Step 1: Paste the provided script tag above the &lt;/body&gt; tag:
+                        <div className="step_content">
+                        URLS for Call to Action targets (typically a form) - Ex: URL
+                    of a form complete 'thank you' page
+                        </div>
                         <PrismCode
                           code={`
-            <script>
-                var yv_launch_success=true,
-                yv_instid=${institutionID},
-                yv_locid=${firstLocation};
-            </script>
-            <script src="https://www.youvisit.com/tour/Success/js3"></script>
-            `}
+                      <script>
+                          var yv_launch_success=true,
+                          yv_instid=${institutionID},
+                          yv_locid=${firstLocation};
+                      </script>
+                      <script src="https://www.youvisit.com/tour/Success/js3"></script>
+                      `}
                           language="html"
                         />
+
+                        <div className="important_note">
+                        <p>
+                          Paste the provided script tag above the body tag:
+                        </p>
+                        </div>
+                        
                       </li>
-                      Once the success condition is met, execute the following Javascript
-                      call
+                  </ul>
+                </div>
+                <div className="content">
+                    <h4>Advanced Instructions</h4>
+                    <p>
+                            If you don't have a success/confirmation page or need to call
+                            the success tag on demand, the YouVisit script can accommodate
+                            such scenarios. For example, if you show Javascript
+                            confirmation pop-up rather than forwarding the user to a
+                            success page after registering, then you can follow these
+                            steps to call the success tag on demand.
+                          </p>
+                    <ul className="embed_steps">
+                      <li>
+                      <div className="step_content">
+                      Paste the provided script tag above the
+                    &lt;/body&gt; tag:
+                      </div>
+                              <PrismCode
+                              code={`
+                          <script>
+                              var yv_launch_success=true,
+                              yv_instid=${institutionID},
+                              yv_locid=${firstLocation};
+                          </script>
+                          <script src="https://www.youvisit.com/tour/Success/js3"></script>
+                          `}
+                                    language="html"
+                                  />
+                            </li>
+                            <li>
+                            <div className="step_content">
+                            Once the success condition is met, execute the following
+                        Javascript call
+                            </div>
+                                    <PrismCode
+                                  code={`
+                          SuccessScript.embedSuccess();
+                          `}
+                                  language="javascript"
+                                />
+                            </li>
+                          </ul>
+                      </div>
+                  </div>
+                <div>
+          
+              </div>
+            </div>
+          </div>
+          {/* Wrapper Centered */}
+        </section>
+
+
+        <section className="directly_on_website">
+          <div className="wrapper centered">
+            <h2 id="google-tag-manager" className="section-title">Google Tag Manager</h2>
+            <div className="group">
+              <header>
+                <h3 id="google-tag-manager-installing-the-tag" className="section-subtitle">Installing the Tag</h3>
+                <p>
+                  The following is the set of steps needed to install the{" "}
+                  <span className="yvtag">YV TAG</span>.The tag is a tracking script
+                  that reads your <span className="embedcodetag">Embed Code</span> to
+                  launch your virtual tour. We recommend triggering the tag to run on
+                  all pages in order to eliminate needing to include it with each{" "}
+                  <span className="embedcodetag">Embed Code</span> and for enhanced
+                  tracking.
+                </p>
+              </header>
+              <div className="group_content">
+                <div className="content">
+                  <h4>Login to GTM</h4>
+                  <p>
+                    <a href="https://tagmanager.google.com" target="_blank">
+                      https://tagmanager.google.com
+                    </a>
+                  </p>
+                </div>
+                <div className="content">
+                  <h4>Create a tag in GTM</h4>
+                  <p>Workspace &gt; Tags &gt; New &gt; Custom HTML</p>
+                  <ul className="embed_steps">
+                    <li>
+                      <div className="step_content">
+                        Add a title to the tag – Ex: “Virtual Tour Tracking”
+                      </div>
+                    </li>
+                    <li>
+                      <div className="step_content">
+                        Tag Configuration
+                      </div>
+                        <div className="important_note">
+                            Paste the following <span className="yvtag">YV TAG</span> in the
+                            custom HTML field:
+                        </div>
                       <PrismCode
-                        code={`
-            SuccessScript.embedSuccess();
-            `}
-                        language="javascript"
-                      />
-                    </ol>
+                          code={`
+                              <script src="https://www.youvisit.com/tour/Success/js3"></script>
+                              `}
+                          language="html"
+                        />
+                    </li>
+                    <li>
+                      <div className="step_content">
+                        Triggering
+                        <div className="important_note">
+
+                          Define the URLs/Patterns for the locations you want the tag to be
+                          included.{" "}
+                          <strong>
+                            Include <span className="yvtag">YV TAG</span> on all pages
+                          </strong>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="step_content">
+                          Hit ”Save” in upper right-hand corner
+                      </div>
+                    </li>
+                    <li>
+                    <div className="step_content">Be sure to publish the changes through the main GTM page</div>
+                    </li>
+                  </ul>
+                  <div className="important_note">
+                  The tag must be successfully installed in order to be able to launch
+            your experience and track success.
+                  </div>
                 </div>
               </div>
-            </div>{/* Wrapper Centered */}
+            </div>
+          </div>{/* Wrapper Centered */}
         </section>
-        
 
         
         
-        <h2 id="google-tag-manager">Google Tag Manager</h2>
-        <h3 id="google-tag-manager-installing-the-tag">Installing the Tag</h3>
-        <p>
-          The following is the set of steps needed to install the{" "}
-          <span className="yvtag">YV TAG</span>.The tag is a tracking script that
-          reads your <span className="embedcodetag">Embed Code</span> to launch your
-          virtual tour. We recommend triggering the tag to run on all pages in
-          order to eliminate needing to include it with each{" "}
-          <span className="embedcodetag">Embed Code</span> and for enhanced
-          tracking.
-        </p>
-        <h4>Login to GTM</h4>
-        <p>
-          <a href="https://tagmanager.google.com">
-            https://tagmanager.google.com
-          </a>
-        </p>
-        <h4>Create a tag in GTM</h4>
-        <p>Workspace &gt; Tags &gt; New &gt; Custom HTML</p>
+        
+        
+       
+        
+        
         <ol>
-          <li>Add a title to the tag – Ex: “Virtual Tour Tracking”</li>
+          <li></li>
           <li>
-            Tag Configuration
-            <p>
-              <b>
-                Paste the following <span className="yvtag">YV TAG</span> in the
-                custom HTML field:
-              </b>
-            </p>
-            <PrismCode
-              code={`
-<script src="https://www.youvisit.com/tour/Success/js3"></script>
-`}
-              language="html"
-            />
+            
+            
           </li>
           <li>
-            Triggering
-            <p>
-              Define the URLs/Patterns for the locations you want the tag to be
-              included.{" "}
-              <b>
-                Include <span className="yvtag">YV TAG</span> on all pages
-              </b>
-            </p>
+            
           </li>
-          <li>Hit ”Save” in upper right-hand corner</li>
-          <li>Be sure to publish the changes through the main GTM page</li>
+          <li></li>
+          <li></li>
         </ol>
         <p>
           <b>
@@ -568,8 +659,9 @@ const InstructionsPage = ({ data }) => {
         </p>
         <h3 id="google-tag-manager-launching">Launching</h3>
         <p>
-          Once the is <span className="yvtag">YV TAG</span> running on your site,
-          you need to add the <span className="embedcodetag">Embed Code</span>
+          Once the is <span className="yvtag">YV TAG</span> running on your
+          site, you need to add the{" "}
+          <span className="embedcodetag">Embed Code</span>
           into the html of the pages you want your virtual tour to display on.
           Your virtual tour can be embedded in multiple locations per page, on
           multiple pages, and there are two ways to launch the virtual tour on
@@ -600,9 +692,9 @@ const InstructionsPage = ({ data }) => {
 
         <h3 id="google-tag-manager-tracking-success">Tracking Success</h3>
         <p>
-          Once the <span className="yvtag">YV TAG</span> is running on your site and
-          you’ve successfully launched your virtual tour, you will want to track
-          the success via the Success Tag.
+          Once the <span className="yvtag">YV TAG</span> is running on your site
+          and you’ve successfully launched your virtual tour, you will want to
+          track the success via the Success Tag.
         </p>
         <h4>Required Items</h4>
         <h4>Login to GTM</h4>

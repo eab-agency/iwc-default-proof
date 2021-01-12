@@ -604,6 +604,20 @@ section{
         h4{
             border-bottom: 1px solid lighten($c-black, 65%);
             margin-top: 3em;
+            margin-bottom: 0.8em;
+            padding-bottom: 0.3em;
+            padding-left: 2em;
+            position: relative;
+
+            &::before{
+                content: $i-squarecheckmark;
+                font-family: $f-icons;
+                font-size: 1.8em;
+                position: absolute;
+                left: 0;
+                top: -0.5em;
+                font-weight: normal;
+            }
         }
     }
 
@@ -635,10 +649,10 @@ section{
                 }
 
             }
-            .change_note{
+            .important_note{
                 display: block;
                 @include fluidRem(padding, 0.5rem, 1.5rem);
-                background: lighten($c-secondary-violet-lt, 13%);
+                background: lighten($c-secondary-violet-lt, 15%);
                 text-align: center;
                 width: 100%;
                 max-width: $mq-700;
@@ -647,10 +661,10 @@ section{
                 position: relative;
 
                 &::before{
-                    content: "Note";
+                    content: "Important";
                     display: block;
                     text-transform: uppercase;
-                    color: rgba($c-secondary-violet-md, 0.1);
+                    color: rgba($c-secondary-violet-md, 0.07);
                     font-size: 5em;
                     font-weight: 800;
                     position: absolute;
@@ -711,6 +725,9 @@ section{
 
 
     .code-toolbar{
+        max-width: $mq-800;
+        margin: 0 auto;
+
         pre{
             code{
                 font-size: 0.8rem;
