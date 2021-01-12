@@ -1,7 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7c510d0a-71e1-4fde-984b-e6aebc350104/deploy-status)](https://app.netlify.com/sites/proof-averett/deploys) | ![Netlify](https://img.shields.io/netlify/7c510d0a-71e1-4fde-984b-e6aebc350104?style=flat-square) | https://img.shields.io/npm/v/gatsby?style=flat-square | ![npm](https://img.shields.io/npm/v/@ux_bob/yv-iwc?style=flat-square)
+
 ## Getting started
 
 Setting up development environtment for running Gatsby
-
 
 ### Installing Gatsby
 
@@ -10,7 +11,6 @@ Setting up development environtment for running Gatsby
 ### `git clone git@github.com:EAB-Sales/iwc-default-proof.git`
 
 'Install' this project locally. `cd iwc-default-proof` and then run `npm install` and then you'll be ready to start developing with `gatsby develop` to start the development server.
-
 
 ## Crucial Commands
 
@@ -24,8 +24,8 @@ Run in the project locally.
 
 Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
 
-
 ### Pushing to master
+
 Work on a feature/seperate branch and send pull requests to `master`. Anything deployed to `master` gets automatically deployed to the live site.
 
 ## Other resources
