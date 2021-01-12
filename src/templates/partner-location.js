@@ -65,7 +65,16 @@ const Location = props => {
 
   return (
     <Layout title={institution.name} locations={locations}>
-      <h2>{location.name}</h2>
+      <header className="location_header">
+        <div className="location">
+          <div className="experience_type"  data-experience-type={location.experience_type}>
+            {location.experience_type}
+          </div>
+          <h1 className="location_name">{location.name}</h1>
+        </div>
+        <div className="update_date">{location.update_date}</div>
+      </header>
+      
       <YouVisitIWC
         containerWidth="100%"
         containerHeight="500px"
@@ -77,7 +86,6 @@ const Location = props => {
         updateDate={location.update_date}
         experienceType={location.experience_type}
       />
-
       {experience_type === "vt" ? (
         <button value="Show Stops" onClick={onClick}>
           {open ? "Hide Stops" : "Show Stops"}
