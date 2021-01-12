@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
             <li key={location.loc_id}>
               <Link to={`/location/${location.loc_id}`}>
                 <figure>
-                  <img src={location.cover_photo.full} alt={location.name} />
+                  <img src={location.cover_photo.thumb} alt={location.name} />
                 </figure>
                 <div className="location_content">
                   <h2>{location.name}</h2>

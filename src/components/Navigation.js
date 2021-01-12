@@ -1,16 +1,29 @@
 import React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import { Link } from "gatsby"
 
 const Navigation = ({ locations }) => {
   const [toggle, setToggle] = useState(false)
   const onClick = () => setToggle(!toggle)
+  const [pageUrl, setPage] = useState("not-internal")
+
+  useEffect(() => {
+    const url = window.location.href
+    if (url.includes("internal")) {
+      setPage("internal")
+    } else {
+      setPage("")
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const navItems = locations.map((location, index) => (
     <li key={index}>
-      <Link to={`/location/${location.loc_id}`}>{location.name}</Link>
+      <Link to={`/${pageUrl}/location/${location.loc_id}`}>
+        {location.name}
+      </Link>
     </li>
   ))
 

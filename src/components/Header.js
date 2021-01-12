@@ -9,12 +9,8 @@ const Header = ({ title, locations }) => {
   const [pageUrl, setPage] = useState("landing")
 
   useEffect(() => {
-    var url = window.location.href
-    if (
-      url.includes("location") ||
-      url.includes("internal") ||
-      url.includes("instructions")
-    ) {
+    const url = window.location.href
+    if (url.includes("location") || url.includes("instructions")) {
       setPage("not-landing")
     } else {
       setPage("landing")
