@@ -554,106 +554,10 @@ const InstructionsPage = ({ data }) => {
                     <li>
                       <div className="step_content">
                         <a
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  href="https://tagmanager.google.com"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  target="_blank"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  rel="noreferrer"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                >
+                          href="https://tagmanager.google.com"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           https://tagmanager.google.com
                         </a>
                       </div>
@@ -805,105 +709,9 @@ const InstructionsPage = ({ data }) => {
                     <li>
                       <div className="step_content">
                         <a
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
                           href="https://tagmanager.google.com"
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
                           target="_blank"
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
                           rel="noreferrer"
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         >
                           https://tagmanager.google.com
                         </a>
@@ -934,7 +742,7 @@ const InstructionsPage = ({ data }) => {
                         language="html"
                       />
                       <div className="important_note">
-                        Paste the provided into the HTML text area:
+                        Paste the provided script tag into the HTML text area:
                       </div>
                     </li>
                     <li>
@@ -983,16 +791,19 @@ const InstructionsPage = ({ data }) => {
                     See custom <span className="embedcodetag">Embed Codes</span>{" "}
                     for each Destination on your virtual tour below.
                   </p>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Destination Name</th>
-                        <th>Immersive Banner</th>
-                        <th>Hyperlink</th>
-                      </tr>
-                    </thead>
-                    <tbody>{stopsCodes}</tbody>
-                  </table>
+                  <div className="additional-embed-codes">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Destination Name</th>
+                          <th>Immersive Banner</th>
+                          <th>Hyperlink</th>
+                        </tr>
+                      </thead>
+                      <tbody>{stopsCodes}</tbody>
+                    </table>
+                  </div>
+                 
                 </div>
               </div>
             </div>
