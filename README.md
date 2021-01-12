@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7c510d0a-71e1-4fde-984b-e6aebc350104/deploy-status)](https://app.netlify.com/sites/proof-averett/deploys) | ![Netlify](https://img.shields.io/netlify/7c510d0a-71e1-4fde-984b-e6aebc350104?style=flat-square) | https://img.shields.io/npm/v/gatsby?style=flat-square | ![npm](https://img.shields.io/npm/v/@ux_bob/yv-iwc?style=flat-square)
+![Netlify](https://img.shields.io/netlify/7c510d0a-71e1-4fde-984b-e6aebc350104?style=flat-square) | ![@ux_bob/yv-iwc](https://img.shields.io/npm/v/@ux_bob/yv-iwc?style=flat-square)
 
 ## Getting started
 
