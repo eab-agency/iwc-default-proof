@@ -19,13 +19,13 @@ const Navigation = ({ locations }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const navItems = locations.map((location, index) => (
-    <li key={index}>
-      <Link to={`/${pageUrl}/location/${location.loc_id}`}>
-        {location.name}
-      </Link>
-    </li>
-  ))
+  const navItems =
+    locations &&
+    locations.map((location, index) => (
+      <li key={index}>
+        <Link to={`/${pageUrl}/location/${location.loc_id}`}>{location.name}</Link>
+      </li>
+    ))
 
   return (
     <div className={toggle ? "navBar show-nav" : "navBar"}>
