@@ -72,10 +72,11 @@ const InstructionsPage = ({ data }) => {
         <tr key={index}>
           <td>
             {stop.title}
-
-            <figure>
-              <img src={stop.panoramas[0].smallurl} alt={stop.title} />
-            </figure>
+            {stop.panoramas[0].smallurl && (
+              <figure>
+                <img src={stop.panoramas[0].smallurl} alt={stop.title} />
+              </figure>
+            )}
           </td>
           <td>
             {/* <PrismCode code={immersiveBannerCode} language="html" /> */}
