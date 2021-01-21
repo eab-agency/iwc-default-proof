@@ -70,11 +70,12 @@ const InstructionsPage = ({ data }) => {
   `
       return (
         <tr key={index}>
+          {/* <pre>{JSON.stringify(allStops, null, 4)}</pre> */}
           <td>
             {stop.title}
-            {stop.panoramas[0].smallurl && (
+            {stop.panoramas.length >= 1 && (
               <figure>
-                <img src={stop.panoramas[0].smallurl} alt={stop.title} />
+                <img src={stop.panoramas[0].thumburl} alt={stop.title} />
               </figure>
             )}
           </td>
@@ -829,6 +830,7 @@ export const query = graphql`
             title
             panoramas {
               smallurl
+              thumburl
             }
           }
         }

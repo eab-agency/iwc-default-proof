@@ -66,7 +66,7 @@ const InternalLocation = props => {
   const location = props.data.yv.locations
   const locations = props.data.yv.institutions.locations
 
-  console.log("___________________locations", locations)
+  // console.log("___________________locations", locations)
 
   return (
     <Layout title={"INTERNAL: " + institution.name} locations={locations}>
