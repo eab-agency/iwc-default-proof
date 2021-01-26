@@ -63,10 +63,6 @@ const InternalLocation = props => {
   const locations = props.data.yv.institutions.locations
   const experience_type = props.data.yv.locations.experience_type
 
-  if (experience_type === "vt") {
-    setType("hover-panel")
-  }
-
   return (
     <Layout title={"INTERNAL: " + institution.name} locations={locations}>
       <h2>{location.name}</h2>
