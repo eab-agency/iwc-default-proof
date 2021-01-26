@@ -26,7 +26,7 @@ const HotSpot = ({ hotspot }) => {
 
 const MediaItems = ({ media_item }) => {
   return (
-    <li className="media_item">
+    <li className="media_item" key={media_item.item_id}>
       <img src={media_item.mediumurl} alt={media_item.video_type} />
       <p>item_type: {media_item.item_type}</p>
       <p>video_type: {media_item.video_type}</p>
@@ -34,12 +34,8 @@ const MediaItems = ({ media_item }) => {
       {/* <pre>{JSON.stringify({ media_item }, null, 4)}</pre> */}
       {media_item.description !== "" ? (
         <p>
-          <span>
-            description:{" "}
-            <span
-              dangerouslySetInnerHTML={{ __html: media_item.description }}
-            />
-          </span>
+          description:{" "}
+          <span dangerouslySetInnerHTML={{ __html: media_item.description }} />
         </p>
       ) : null}
       {media_item.item_type === "video" && (
@@ -65,8 +61,11 @@ const InternalLocation = props => {
   const institution = props.data.yv.institutions
   const location = props.data.yv.locations
   const locations = props.data.yv.institutions.locations
+  const experience_type = props.data.yv.locations.experience_type
 
-  // console.log("___________________locations", locations)
+  if (experience_type === "vt") {
+    setType("hover-panel")
+  }
 
   return (
     <Layout title={"INTERNAL: " + institution.name} locations={locations}>
@@ -140,6 +139,7 @@ export const query = graphql`
             title
             description
             media_items {
+              item_id
               description
               item_type
               video_type

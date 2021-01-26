@@ -41,6 +41,10 @@ const Location = props => {
   const showCode = process.env.GATSBY_SHOWCODE
   const experience_type = props.data.yv.locations.experience_type
   const allStops = props.data.yv.locations.stops
+  let type = "inline-embed"
+  if (experience_type === "vt") {
+    type = "hover-panel"
+  }
   let stops = ""
   if (experience_type === "vt") {
     stops = allStops.map((stop, index) => {
@@ -52,7 +56,7 @@ const Location = props => {
             containerHeight="500px"
             title={stop.title}
             institution={institution.inst_id}
-            type=""
+            type="hover-panel"
             location={location.loc_id}
             loadStopOnly="1"
             showCode={showCode}
@@ -67,20 +71,23 @@ const Location = props => {
     <Layout title={institution.name} locations={locations}>
       <header className="location_header">
         <div className="location">
-          <div className="experience_type"  data-experience-type={location.experience_type}>
+          <div
+            className="experience_type"
+            data-experience-type={location.experience_type}
+          >
             {location.experience_type}
           </div>
           <h1 className="location_name">{location.name}</h1>
         </div>
         <div className="update_date">{location.update_date}</div>
       </header>
-      
+
       <YouVisitIWC
         containerWidth="100%"
         containerHeight="500px"
         title={location.name}
         institution={institution.inst_id}
-        type="inline-embed"
+        type={type}
         location={location.loc_id}
         showCode={showCode}
         updateDate={location.update_date}
