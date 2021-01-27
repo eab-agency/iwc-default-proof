@@ -37,10 +37,27 @@ const Location = props => {
 
   const institution = props.data.yv.institutions
   const location = props.data.yv.locations
-  const locations = props.data.yv.institutions.locations
+  let locations = props.data.yv.institutions.locations
   const showCode = process.env.GATSBY_SHOWCODE
   const experience_type = props.data.yv.locations.experience_type
   const allStops = props.data.yv.locations.stops
+
+  let filtered_locations_arr = process.env.GATSBY_LOCATIONS
+  if (
+    // first check if env variable is set
+    filtered_locations_arr === undefined ||
+    filtered_locations_arr.length === 0
+  ) {
+    console.log(locations)
+  } else {
+    filtered_locations_arr = filtered_locations_arr.split`,`.map(x => +x)
+    locations = locations.filter(el => {
+      return filtered_locations_arr.some(f => {
+        return f === el.loc_id
+      })
+    })
+  }
+
   let type = "inline-embed"
   if (experience_type === "vt") {
     type = "hover-panel"

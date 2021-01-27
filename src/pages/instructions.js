@@ -34,7 +34,24 @@ const InstructionsPage = ({ data }) => {
   // const title = `Virtual Tour Installation Instructions for ${name}`
   const title = datum.name
   const firstLocation = datum.locations[0].loc_id
-  const locations = datum.locations
+  let locations = datum.locations
+
+  let filtered_locations_arr = process.env.GATSBY_LOCATIONS
+  if (
+    // first check if env variable is set
+    filtered_locations_arr === undefined ||
+    filtered_locations_arr.length === 0
+  ) {
+    console.log(locations)
+  } else {
+    filtered_locations_arr = filtered_locations_arr.split`,`.map(x => +x)
+    locations = locations.filter(el => {
+      return filtered_locations_arr.some(f => {
+        return f === el.loc_id
+      })
+    })
+  }
+
   const experience_type = datum.locations[0].experience_type
   const allStops = datum.locations[0].stops
   let stops = ""

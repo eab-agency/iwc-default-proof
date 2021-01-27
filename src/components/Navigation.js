@@ -18,7 +18,7 @@ const Navigation = ({ locations }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
+  console.log("locations in the nav: ", locations)
   const navItems =
     locations &&
     locations.map((location, index) => (
