@@ -65,7 +65,7 @@ const InstructionsPage = ({ data }) => {
             containerHeight="500px"
             title={locations.name}
             institution={datum.inst_id}
-            type="inline-embed"
+            type="hover-panel"
             location={locations.loc_id}
             showCode="false"
             dataStopid={stop.stopid}
@@ -472,12 +472,12 @@ const InstructionsPage = ({ data }) => {
                       </div>
                       <PrismCode
                         code={`
-                      <script>
-                          var yv_launch_success=true,
-                          yv_instid=${institutionID},
-                          yv_locid=${firstLocation};
-                      </script>
-                      <script src="https://www.youvisit.com/tour/Success/js3"></script>
+<script>
+    var yv_launch_success=true,
+    yv_instid=${institutionID},
+    yv_locid=${firstLocation};
+</script>
+<script src="https://www.youvisit.com/tour/Success/js3"></script>
                       `}
                         language="html"
                       />
@@ -506,12 +506,12 @@ const InstructionsPage = ({ data }) => {
                       </div>
                       <PrismCode
                         code={`
-                          <script>
-                              var yv_launch_success=true,
-                              yv_instid=${institutionID},
-                              yv_locid=${firstLocation};
-                          </script>
-                          <script src="https://www.youvisit.com/tour/Success/js3"></script>
+<script>
+    var yv_launch_success=true,
+    yv_instid=${institutionID},
+    yv_locid=${firstLocation};
+</script>
+<script src="https://www.youvisit.com/tour/Success/js3"></script>
                           `}
                         language="html"
                       />
@@ -644,11 +644,11 @@ const InstructionsPage = ({ data }) => {
                 <p>
                   Once the is <span className="yvtag">YV TAG</span> running on
                   your site, you need to add the{" "}
-                  <span className="embedcodetag">Embed Code</span>
-                  into the html of the pages you want your virtual tour to
-                  display on. Your virtual tour can be embedded in multiple
-                  locations per page, on multiple pages, and there are two ways
-                  to launch the virtual tour on your website:
+                  <span className="embedcodetag">Embed Code</span> into the html
+                  of the pages you want your virtual tour to display on. Your
+                  virtual tour can be embedded in multiple locations per page,
+                  on multiple pages, and there are two ways to launch the
+                  virtual tour on your website:
                 </p>
               </header>
               <div className="group_content">
@@ -748,10 +748,10 @@ const InstructionsPage = ({ data }) => {
                       <div className="step_content">Tag Configuration</div>
                       <PrismCode
                         code={`
-                      <script>
-                          var yv_launch_success=true, yv_instid=123, yv_locid=123;
-                      </script>
-                      <script src="https://www.youvisit.com/tour/Success/js3"></script>
+<script>
+    var yv_launch_success=true, yv_instid=123, yv_locid=123;
+</script>
+<script src="https://www.youvisit.com/tour/Success/js3"></script>
                       `}
                         language="html"
                       />
