@@ -44,11 +44,6 @@ const Navigation = ({ locations }) => {
             </Link>
             <ul>{navItems}</ul>
           </li>
-          <li>
-            <Link className="embeding_instructions" to="/instructions">
-              Embeding Instructions
-            </Link>
-          </li>
         </ul>
       </nav>
     </div>
