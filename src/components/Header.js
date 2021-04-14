@@ -23,7 +23,9 @@ const Header = ({ title, locations }) => {
       data-page-name={pageUrl === "landing" ? "landing-page" : "location"}
     >
       <div className="eab_logo">
-        <img src={eablogo} alt="EAB Global" />
+        <Link to="/">
+          <img src={eablogo} alt="EAB Global" />
+        </Link>
         <div className="agency_services">Agency Services</div>
       </div>
       <div className="partner">
