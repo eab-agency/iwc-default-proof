@@ -38,17 +38,6 @@ const MediaItems = ({ media_item }) => {
           <span dangerouslySetInnerHTML={{ __html: media_item.description }} />
         </p>
       ) : null}
-      {media_item.item_type === "video" && (
-        <div>
-          <p>Title: {media_item.video.title}</p>
-          <video width="100%" controls>
-            <source src={media_item.video.url} type="video/mp4" />
-            <track default kind="captions" srclang="en" src="" />
-            {/* <source src="movie.ogg" type="video/ogg" /> */}
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      )}
     </li>
   )
 }
