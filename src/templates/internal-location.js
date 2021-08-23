@@ -50,7 +50,7 @@ const InternalLocation = props => {
   const institution = props.data.yv.institutions
   const location = props.data.yv.locations
   const locations = props.data.yv.institutions.locations
-  const experience_type = props.data.yv.locations.experience_type
+  // const experience_type = props.data.yv.locations.experience_type
 
   return (
     <Layout title={"INTERNAL: " + institution.name} locations={locations}>
