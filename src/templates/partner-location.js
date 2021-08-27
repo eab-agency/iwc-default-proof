@@ -48,7 +48,7 @@ const Location = props => {
     filtered_locations_arr === undefined ||
     filtered_locations_arr.length === 0
   ) {
-    console.log(locations)
+    // console.log(locations)
   } else {
     filtered_locations_arr = filtered_locations_arr.split`,`.map(x => +x)
     locations = locations.filter(el => {
