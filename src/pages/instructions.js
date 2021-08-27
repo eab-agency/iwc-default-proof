@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { usePageHeadingsTree } from "use-page-headings-tree"
+// import { usePageHeadingsTree } from "use-page-headings-tree"
 import { graphql } from "gatsby"
 import { PrismCode } from "../components/YouVisitIWC/prismcode"
 import { YouVisitIWC } from "@ux_bob/yv-iwc"
@@ -18,7 +18,7 @@ const InstructionsPage = ({ data }) => {
     setPageHedingNodes(headingNodes)
   }, [])
 
-  usePageHeadingsTree(pageHeadingNodes, setPageHeadingTree, false)
+  // usePageHeadingsTree(pageHeadingNodes, setPageHeadingTree, false)
 
   const renderNodeList = node => (
     <li key={node.id}>
