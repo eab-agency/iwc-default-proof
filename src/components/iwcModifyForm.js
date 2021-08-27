@@ -47,8 +47,8 @@ const IWCModifyForm = ({ updateWidth, updateType, updateHeight }) => {
   }
 
   const handleSubmit = (event, newValue) => {
-    console.log("width + radio: ", width + radio)
-    console.log("height: ", height + "px")
+    // console.log("width + radio: ", width + radio)
+    // console.log("height: ", height + "px")
     updateWidth(width + radio)
     updateHeight(height)
   }
