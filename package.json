@@ -17,17 +17,18 @@
     "@ux_bob/yv-iwc": "^1.1.10",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^1.12.0",
-    "gatsby": "^3.12.1",
+    "gatsby": "^5.7.0",
     "gatsby-plugin-create-client-paths": "^3.12.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-react-helmet": "^4.12.0",
-    "gatsby-plugin-sass": "^4.12.0",
-    "gatsby-source-filesystem": "^3.12.0",
-    "gatsby-source-graphql": "^3.12.0",
-    "node-sass": "^6.0.1",
-    "prismjs": "^1.23.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "gatsby-plugin-netlify": "^5.1.0",
+    "gatsby-plugin-react-helmet": "^6.7.0",
+    "gatsby-plugin-sass": "^6.7.0",
+    "gatsby-source-filesystem": "^5.7.0",
+    "gatsby-source-graphql": "^5.7.0",
+    "node-sass": "^8.0.0",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "scriptjs": "^2.5.9",
     "use-page-headings-tree": "^1.0.8"
@@ -42,5 +43,5 @@
   ],
   "browser": {
     "crypto": false
-}
+  }
 }

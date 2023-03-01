@@ -10,8 +10,8 @@ import LayoutInstructions from "../components/LayoutInstructions"
 
 const InstructionsPage = ({ data }) => {
   const headingsContainerRef = useRef()
-  const [pageHeadingNodes, setPageHedingNodes] = useState([])
-  const [pageHeadingTree, setPageHeadingTree] = useState(null)
+  const [, setPageHedingNodes] = useState([])
+  const [pageHeadingTree, ] = useState(null)
 
   useEffect(() => {
     const headingNodes = headingsContainerRef.current.querySelectorAll("h2,h3")
