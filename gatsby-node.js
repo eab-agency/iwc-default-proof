@@ -11,11 +11,12 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   const res = await graphql(
     `
-      query($instID: String) {
+      query ($instID: String) {
         yv {
           institutions(instID: $instID) {
             locations {
               loc_id
+              status
             }
           }
         }
@@ -24,23 +25,25 @@ module.exports.createPages = async ({ graphql, actions }) => {
     { instID: instID }
   )
 
-  res.data.yv.institutions.locations.forEach(location => {
-    createPage({
-      component: partnerTemplate,
-      path: `/location/${location.loc_id}`,
-      context: {
-        locID: `${location.loc_id}`,
-        instID: `${instID}`,
-      },
-    })
-    createPage({
-      component: internalTemplate,
-      path: `/internal/location/${location.loc_id}`,
-      context: {
-        locID: `${location.loc_id}`,
-        instID: `${instID}`,
-      },
-    })
+  res.data.yv.institutions.locations.forEach((location) => {
+    if (location.status === "live") {
+      createPage({
+        component: partnerTemplate,
+        path: `/location/${location.loc_id}`,
+        context: {
+          locID: `${location.loc_id}`,
+          instID: `${instID}`,
+        },
+      })
+      createPage({
+        component: internalTemplate,
+        path: `/internal/location/${location.loc_id}`,
+        context: {
+          locID: `${location.loc_id}`,
+          instID: `${instID}`,
+        },
+      })
+    }
   })
 }
 
