@@ -43,6 +43,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
           instID: `${instID}`,
         },
       })
+    } else {
+      console.log("🛑🛑🛑 ~ location status is not live", location.loc_id, location.status)
     }
   })
 }
