@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react"
-// import { usePageHeadingsTree } from "use-page-headings-tree"
 import { graphql } from "gatsby"
 import { PrismCode } from "../components/YouVisitIWC/prismcode"
 import { YouVisitIWC } from "@ux_bob/yv-iwc"
