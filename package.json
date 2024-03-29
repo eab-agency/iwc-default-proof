@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
-    "@ux_bob/yv-iwc": "^1.1.20",
+    "@ux_bob/yv-iwc": "^1.1.21",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^1.12.0",
     "gatsby": "^5.7.0",

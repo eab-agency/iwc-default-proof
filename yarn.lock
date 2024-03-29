@@ -2664,12 +2664,13 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@ux_bob/yv-iwc@^1.1.20":
-  version "1.1.20"
-  resolved "https://registry.yarnpkg.com/@ux_bob/yv-iwc/-/yv-iwc-1.1.20.tgz#6ccd329daff90ee17e62ba7f92d13576a59cee7e"
-  integrity sha512-/Go+6knBiFWW1ota+JEdwtHMjcty4gvfwP5rq4xzQU2htN+Qn/6fZOVv4I030kNp92XA4BQ4pkK6iWYJBoOMFA==
+"@ux_bob/yv-iwc@^1.1.21":
+  version "1.1.21"
+  resolved "https://registry.yarnpkg.com/@ux_bob/yv-iwc/-/yv-iwc-1.1.21.tgz#7bee9d2aa77c3a19c405d573882e95a92cc810ba"
+  integrity sha512-z+MY2znBY4YGeZW4LlCPq6Pm08E2iVjgjK3w8OpiuLVy+4lGfvqKnUgAEgjr2UvM7Vatw2K8NNi1tLvGrWSvpQ==
   dependencies:
     prismjs "^1.22.0"
+    prop-types "^15.8.1"
     react "^18.2.0"
     react-script-hook "^1.7.0"
     react-syntax-highlighter "^15.5.0"
