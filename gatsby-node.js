@@ -56,7 +56,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   })
   createPage({
     component: allLocationsTemplate,
-    path: `/all-locations`,
+    path: `/all`,
     context: {
       locations: locations,
     },

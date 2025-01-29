@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
 
 const AllLocations = ({ pageContext }) => {
   const { locations } = pageContext
@@ -19,16 +18,3 @@ const AllLocations = ({ pageContext }) => {
 }
 
 export default AllLocations
-
-export const query = graphql`
-  query ($instID: String) {
-    yv {
-      institutions(instID: $instID) {
-        locations {
-          loc_id
-          status
-        }
-      }
-    }
-  }
-`
