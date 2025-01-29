@@ -31,7 +31,11 @@ const Navigation = ({ locations }) => {
 
   return (
     <div className={toggle ? "navBar show-nav" : "navBar"}>
-      <button className="nav-toggle" onClick={onClick}>
+      <button
+        className="nav-toggle"
+        onClick={onClick}
+        aria-label="Toggle navigation menu"
+      >
         <span className="burger-line"></span>
         <span className="burger-line"></span>
         <span className="burger-line"></span>

@@ -1,7 +1,7 @@
-@import "reset",
-        "mixins",
-        "settings",
-        "head",
-        "nav",
-        "layout",
-        "layout_instructions";
+@use "reset";
+@use "mixins";
+@use "settings";
+@use "head";
+@use "nav";
+@use "layout";
+@use "layout_instructions";

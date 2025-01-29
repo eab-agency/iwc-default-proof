@@ -25,11 +25,11 @@
     "gatsby-plugin-sass": "^6.7.0",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-source-graphql": "^5.7.0",
-    "node-sass": "^8.0.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "sass": "^1.83.4",
     "scriptjs": "^2.5.9"
   },
   "devDependencies": {
