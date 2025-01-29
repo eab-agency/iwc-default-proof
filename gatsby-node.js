@@ -8,6 +8,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const instID = process.env.GATSBY_YOUVISIT_INSTID
   const partnerTemplate = path.resolve("./src/templates/partner-location.js")
   const internalTemplate = path.resolve("./src/templates/internal-location.js")
+  const allLocationsTemplate = path.resolve("./src/templates/all-locations.js")
 
   const res = await graphql(
     `
@@ -25,7 +26,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     { instID: instID }
   )
   console.log("⬇️⬇️⬇️⬇️⬇️ - All locations for instID:", instID)
-  res.data.yv.institutions.locations.forEach((location) => {
+  const locations = res.data.yv.institutions.locations
+  locations.forEach((location) => {
     console.log(location.loc_id, location.status)
     if (location.status === "live") {
       createPage({
@@ -51,6 +53,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
         location.status
       )
     }
+  })
+  createPage({
+    component: allLocationsTemplate,
+    path: `/all-locations`,
+    context: {
+      locations: locations,
+    },
   })
   console.log("⬆️⬆️⬆️⬆️⬆️ - All locations for instID:", instID)
 }
