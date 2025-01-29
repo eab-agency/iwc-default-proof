@@ -3,10 +3,35 @@ import { Link } from "gatsby"
 
 const AllLocations = ({ pageContext }) => {
   const { locations } = pageContext
+  const locations_defined_in_env_var = process.env.GATSBY_LOCATIONS
+
+  const locationArray = locations_defined_in_env_var
+    .split(",")
+    .map((loc) => Number(loc.trim()))
 
   return (
     <div>
-      <h1>All Locations</h1>
+      <h1>Locations</h1>
+      <p>
+        Here are all the locations you have defined in the environment
+        variables:
+      </p>
+      <ul>
+        {locationArray.map((location) => {
+          const isFound = locations.some((loc) => loc.loc_id === location)
+          return (
+            <li key={location}>
+              {isFound ? (
+                <Link to={`/location/${location}`}>{location}</Link>
+              ) : (
+                location
+              )}
+              <span>{isFound ? " ✅" : " ❌"}</span>
+            </li>
+          )
+        })}
+      </ul>
+      <p>And here are all the available locations for this partner:</p>
       <ul>
         {locations.map((location) => (
           <li key={location.loc_id}>
