@@ -18,6 +18,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
             locations {
               loc_id
               status
+              name
             }
           }
         }

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const AllLocations = ({ pageContext }) => {
   const { locations } = pageContext
@@ -9,7 +10,12 @@ const AllLocations = ({ pageContext }) => {
       <ul>
         {locations.map((location) => (
           <li key={location.loc_id}>
-            {location.loc_id} - {location.status}
+            <span title={location.status === "live" ? "Live" : "Not Live"}>
+              {location.status === "live" ? "👍🏽" : "👎🏽"}
+            </span>
+            <Link to={`/location/${location.loc_id}`}>
+              {location.name} ({location.loc_id})
+            </Link>
           </li>
         ))}
       </ul>
