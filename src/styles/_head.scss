@@ -1,6 +1,6 @@
 @use "sass:color";
-@import "settings";
-@import "mixins"; // Ensure this file contains the definition for fluidRem
+@use "settings";
+@use "mixins"; // Ensure this file contains the definition for mixins.fluidRem
 
 .eab_logo {
   display: flex;
@@ -16,11 +16,11 @@
 
 .eab_logo .agency_services {
   display: block;
-  font-family: $f-sans;
+  font-family: settings.$fsans;
   text-transform: uppercase;
-  @include fluidRem(font-size, 1.2rem, 1.3rem);
-  border-left: 1px solid color.adjust($c-black, $lightness: 65%);
+  border-left: 1px solid color.adjust(settings.$c-black, $lightness: 65%);
   padding-left: 0.6rem;
+  @include mixins.fluidRem(font-size, 1.2rem, 1.3rem);
 }
 
 .site_header {
@@ -30,13 +30,13 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  @include fluidRem(padding, 0.5rem 0.5rem, 0.5rem 1rem);
   background-image: linear-gradient(
     to left,
     color.adjust(black, $lightness: 95%),
     white
   );
-  border-top: 2px solid $c-primary-blue-lt;
+  border-top: 2px solid settings.$c-primary-blue-lt;
+  @include mixins.fluidRem(padding, 0.5rem 0.5rem, 0.5rem 1rem);
 }
 
 .site_header[data-page-name="landing-page"] .partner {
@@ -47,18 +47,18 @@
   display: block;
   @extend h1 !optional;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid color.adjust($c-black, $lightness: 68%);
-  font-family: $f-sans;
+  border-bottom: 1px solid color.adjust(settings.$c-black, $lightness: 68%);
+  font-family: settings.$fsans;
 }
 
 .institution_name::before {
   content: "Partner";
   display: block;
   text-transform: uppercase;
-  @include fluidRem(font-size, 0.8rem, 1rem);
-  color: color.adjust($c-black, $lightness: 50%);
+  color: color.adjust(settings.$c-black, $lightness: 50%);
   text-transform: uppercase;
   font-weight: 500;
+  @include mixins.fluidRem(font-size, 0.8rem, 1rem);
 }
 
 .partner {
@@ -69,18 +69,18 @@
 .partner .partner_name {
   display: flex;
   align-items: center;
-  color: $c-black;
+  color: settings.$c-black;
   font-size: 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: $f-sans;
+  font-family: settings.$fsans;
 }
 
 .partner .partner_name::before {
   content: "Partner";
   display: block;
-  color: color.adjust($c-black, $lightness: 50%);
+  color: color.adjust(settings.$c-black, $lightness: 50%);
   margin-right: 0.6rem;
   font-weight: 300;
 }

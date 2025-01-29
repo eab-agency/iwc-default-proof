@@ -1,6 +1,6 @@
 @use "sass:color";
-@import "settings";
-@import "mixins"; // Ensure this file contains the definition for fluidRem
+@use "settings";
+@use "mixins"; // Ensure this file contains the definition for mixins.fluidRem
 
 .main_container {
   display: flex;
@@ -20,14 +20,14 @@
 }
 
 .wrapper {
-  @include fluidRem(padding, 1rem, 3rem);
   padding-top: 15vh;
+  @include mixins.fluidRem(padding, 1rem, 3rem);
 }
 
 .centered {
   display: block;
   width: 100%;
-  max-width: $mq-1100;
+  max-width: settings.$mq-1100;
   margin: 0 auto;
 }
 
@@ -49,11 +49,11 @@
     position: relative;
     overflow: hidden;
 
-    @media (min-width: $mq-700) {
+    @media (min-width: settings.$mq-700) {
       width: calc(50% - 2rem);
     }
 
-    @media (min-width: $mq-1000) {
+    @media (min-width: settings.$mq-1000) {
       width: calc(33% - 2rem);
     }
 
@@ -68,13 +68,13 @@
         position: relative;
         overflow: hidden;
         // height: 12em;
-        @include fluidRem(height, 8rem, 12rem);
         margin: 0;
+        @include mixins.fluidRem(height, 8rem, 12rem);
 
         &::before {
           content: "";
           display: block;
-          background: rgba($c-secondary-blue-1, 0.6);
+          background: rgba(settings.$c-secondary-blue-1, 0.6);
           width: 100%;
           height: 100%;
           position: absolute;
@@ -102,14 +102,14 @@
         flex-direction: column;
         justify-content: space-between;
         min-height: 8em;
-        @include fluidRem(padding, 0.5rem, 1rem);
+        @include mixins.fluidRem(padding, 0.5rem, 1rem);
 
         h2 {
-          @include fluidRem(font-size, 1rem, 1.4rem);
-          color: $c-black;
+          color: settings.$c-black;
           font-weight: 500;
-          font-family: $f-sans;
+          font-family: settings.$fsans;
           letter-spacing: -0.02em;
+          @include mixins.fluidRem(font-size, 1rem, 1.4rem);
         }
 
         .location_data {
@@ -118,8 +118,8 @@
           justify-content: space-between;
           align-items: center;
           margin: auto 0 0 0;
-          font-family: $f-sans;
-          border-top: 1px solid color.adjust($c-black, $lightness: 70%);
+          font-family: settings.$fsans;
+          border-top: 1px solid color.adjust(settings.$c-black, $lightness: 70%);
           padding-top: 0.5em;
         }
       }
@@ -128,7 +128,7 @@
       &:focus {
         display: block;
         cursor: pointer;
-        border-bottom: 3px solid $c-primary-blue-lt;
+        border-bottom: 3px solid settings.$c-primary-blue-lt;
 
         figure {
           &::before {
@@ -145,12 +145,12 @@
             text-transform: uppercase;
             text-align: center;
             color: white;
-            background: rgba($c-secondary-blue-1, 0.7);
+            background: rgba(settings.$c-secondary-blue-1, 0.7);
             border: 1px solid rgba(white, 0.8);
             border-radius: 0.3em;
             font-size: 0.8rem;
             font-weight: 500;
-            font-family: $f-sans;
+            font-family: settings.$fsans;
             position: absolute;
             z-index: 110;
             top: 50%;
@@ -160,7 +160,7 @@
         }
 
         h2 {
-          color: darken($c-primary-orange, 10%);
+          color: color.adjust(settings.$c-primary-orange, $lightness: -10%);
           text-decoration: underline;
         }
       }
@@ -174,7 +174,7 @@ iframe {
 }
 
 * {
-  font-family: $f-sans;
+  font-family: settings.$fsans;
 }
 
 .update_date {
@@ -183,7 +183,7 @@ iframe {
   font-size: 0.75rem;
   font-weight: 500;
   height: 1em;
-  color: color.adjust($c-black, $lightness: 20%);
+  color: color.adjust(settings.$c-black, $lightness: 20%);
 
   &::before {
     content: "UPDATED:";
@@ -208,22 +208,22 @@ iframe {
   text-align: center;
 
   &[data-experience-type="vt"] {
-    background: $c-primary-alt-blue;
+    background: settings.$c-primary-alt-blue;
   }
 
   &[data-experience-type="iwc"] {
-    background: $c-secondary-violet-dk;
+    background: settings.$c-secondary-violet-dk;
   }
 }
 
 .location_header {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid color.adjust($c-black, $lightness: 65%);
+  border-bottom: 1px solid color.adjust(settings.$c-black, $lightness: 65%);
   padding: 0.5rem 0;
   margin-bottom: 2rem;
 
-  @media (min-width: $mq-800) {
+  @media (min-width: settings.$mq-800) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -235,10 +235,10 @@ iframe {
       content: "Location";
       display: block;
       text-transform: uppercase;
-      @include fluidRem(font-size, 0.8rem, 1rem);
-      color: color.adjust($c-black, $lightness: 50%);
+      color: color.adjust(settings.$c-black, $lightness: 50%);
       text-transform: uppercase;
       font-weight: 500;
+      @include mixins.fluidRem(font-size, 0.8rem, 1rem);
     }
   }
 }

@@ -1,6 +1,6 @@
 @use "sass:color";
-@import "settings";
-@import "mixins"; // Ensure this file contains the definition for fluidRem
+@use "settings";
+@use "mixins"; // Ensure this file contains the definition for mixins.fluidRem
 
 // ===========================
 // Instructions
@@ -8,7 +8,7 @@
 .intro {
   display: block;
   width: 100%;
-  background: $c-primary-blue-dk;
+  background: settings.$c-primary-blue-dk;
   position: relative;
   overflow: hidden;
 
@@ -16,10 +16,10 @@
     display: flex;
     flex-direction: column;
     color: white;
-    font-family: $f-sans;
+    font-family: settings.$fsans;
     strong {
       display: block;
-      background: $c-secondary-blue-2;
+      background: settings.$c-secondary-blue-2;
       font-size: 0.7em;
       width: 8.4em;
       text-align: center;
@@ -30,8 +30,8 @@
   }
   p {
     color: white;
-    @include fluidRem(font-size, 1rem, 1.3rem);
     letter-spacing: -0.02em;
+    @include mixins.fluidRem(font-size, 1rem, 1.3rem);
   }
 }
 
@@ -50,7 +50,7 @@
     height: 50%;
     position: absolute;
     top: 0;
-    background: $c-primary-blue-dk;
+    background: settings.$c-primary-blue-dk;
   }
 
   ul {
@@ -74,7 +74,7 @@
 
       a {
         display: block;
-        background: $c-primary-alt-blue;
+        background: settings.$c-primary-alt-blue;
         padding: 0.8em 2em 0.8em 0.8em;
         border-radius: 0.4em;
         color: white;
@@ -83,7 +83,7 @@
         font-weight: 600;
         line-height: 1.1;
         position: relative;
-        @include fluidRem(font-size, 0.8rem, 1rem);
+        @include mixins.fluidRem(font-size, 0.8rem, 1rem);
 
         &::after {
           content: "";
@@ -101,7 +101,7 @@
 
         &:hover,
         &:focus {
-          background: $c-secondary-violet-dk;
+          background: settings.$c-secondary-violet-dk;
         }
       }
 
@@ -129,17 +129,18 @@
 
         li {
           margin: 0;
-          border-bottom: 1px solid color.adjust($c-black, $lightness: 65%);
+          border-bottom: 1px solid
+            color.adjust(settings.$c-black, $lightness: 65%);
           a {
             background: none !important;
-            color: $c-secondary-violet-dk;
+            color: settings.$c-secondary-violet-dk;
             text-align: center;
             padding: 0.8em;
             font-size: 0.85rem;
 
             &:hover,
             &focus {
-              color: $c-primary-orange;
+              color: settings.$c-primary-orange;
               text-decoration: underline;
             }
           }
@@ -156,34 +157,34 @@
 section {
   overflow: hidden;
   .section-title {
-    @include fluidRem(font-size, 1.2rem, 2.2rem);
-    font-family: $f-serif;
-    color: $c-primary-blue-dk;
+    font-family: settings.$fserif;
+    color: settings.$c-primary-blue-dk;
     margin-bottom: 1em;
     padding-top: 8rem;
     margin-top: -8rem;
+    @include mixins.fluidRem(font-size, 1.2rem, 2.2rem);
   }
 
   .group {
-    @include fluidRem(padding-bottom, 2rem, 4rem);
-    @include fluidRem(margin-bottom, 2rem, 4rem);
     border-bottom: 4px dashed white;
+    @include mixins.fluidRem(padding-bottom, 2rem, 4rem);
+    @include mixins.fluidRem(margin-bottom, 2rem, 4rem);
 
     header {
       width: 100%;
-      max-width: $mq-600;
+      max-width: settings.$mq-600;
 
       .section-subtitle {
         position: relative;
         display: inline-block;
-        font-family: $f-sans;
+        font-family: settings.$fsans;
         padding-top: 8rem;
         margin-top: -8rem;
-        @include fluidRem(font-size, 1rem, 1.5rem);
+        @include mixins.fluidRem(font-size, 1rem, 1.5rem);
 
         .anchor {
           display: block;
-          background: $c-primary-blue-dk;
+          background: settings.$c-primary-blue-dk;
           color: white;
           padding: 0.3em 0.3em 0.3em 0;
           position: relative;
@@ -194,7 +195,7 @@ section {
             width: 100vw;
             height: 100%;
             position: absolute;
-            background: $c-primary-blue-dk;
+            background: settings.$c-primary-blue-dk;
             bottom: 0;
             right: 99.9%;
           }
@@ -209,17 +210,17 @@ section {
         counter-reset: tags_steps;
         .step {
           counter-increment: tags_steps;
-          @include fluidRem(margin, 2.5rem 0, 5rem 0);
           position: relative;
+          @include mixins.fluidRem(margin, 2.5rem 0, 5rem 0);
 
           &::before {
             content: counter(tags_steps);
-            @include fluidRem(font-size, 3rem, 6rem);
-            color: $c-primary-orange;
+            color: settings.$c-primary-orange;
             font-weight: 800;
             position: absolute;
             top: 0;
             line-height: 0.8;
+            @include mixins.fluidRem(font-size, 3rem, 6rem);
           }
 
           ul {
@@ -231,8 +232,8 @@ section {
               font-size: 0.9em;
 
               &::before {
-                content: $i-checkmark;
-                font-family: $f-icons;
+                content: settings.$i-checkmark;
+                font-family: settings.$ficons;
                 display: block;
                 position: absolute;
                 left: 0;
@@ -247,10 +248,10 @@ section {
   }
 
   h4 {
-    @include fluidRem(font-size, 1.1rem, 1.5rem);
-    color: $c-primary-blue-dk;
-    font-family: $f-sans;
+    color: settings.$c-primary-blue-dk;
+    font-family: settings.$fsans;
     margin-bottom: 0.5em;
+    @include mixins.fluidRem(font-size, 1.1rem, 1.5rem);
   }
 }
 
@@ -264,38 +265,38 @@ section {
 }
 .yvtag {
   @include highLightTags();
-  background: $c-primary-blue-dk;
+  background: settings.$c-primary-blue-dk;
 }
 
 .embedcodetag {
   @include highLightTags();
-  background: $c-primary-alt-blue;
+  background: settings.$c-primary-alt-blue;
 }
 .successcode {
   @include highLightTags();
-  background: $c-primary-orange;
+  background: settings.$c-primary-orange;
 }
 
 .step_description {
   display: block;
   position: relative;
-  background: color.adjust($c-secondary-blue-5, $lightness: 15%);
+  background: color.adjust(settings.$c-secondary-blue-5, $lightness: 15%);
   width: 60%;
-  @include fluidRem(padding, 2rem 1rem, 5rem 3rem);
+  @include mixins.fluidRem(padding, 2rem 1rem, 5rem 3rem);
 
   &::before {
     content: "";
     display: block;
     width: 100vw;
     height: 100%;
-    background: color.adjust($c-secondary-blue-5, $lightness: 15%);
+    background: color.adjust(settings.$c-secondary-blue-5, $lightness: 15%);
     position: absolute;
     top: 0;
   }
 
   &::after {
-    content: $i-wired-arrow;
-    font-family: $f-icons;
+    content: settings.$i-wired-arrow;
+    font-family: settings.$ficons;
     color: white;
     font-size: 9em;
     position: absolute;
@@ -304,10 +305,10 @@ section {
   }
 
   h5 {
-    @include fluidRem(font-size, 0.95rem, 1.1rem);
-    font-family: $f-sans;
+    font-family: settings.$fsans;
     margin-bottom: 0.5em;
     margin-top: 1em;
+    @include mixins.fluidRem(font-size, 0.95rem, 1.1rem);
   }
 
   small {
@@ -336,8 +337,8 @@ section {
     padding-left: 2.5em;
     position: relative;
     &::before {
-      content: $i-squarecheckmark;
-      font-family: $f-icons;
+      content: settings.$i-squarecheckmark;
+      font-family: settings.$ficons;
       font-size: 2em;
       position: absolute;
       left: 0;
@@ -352,9 +353,9 @@ section {
     .step_graph {
       position: relative;
       &::before {
-        content: $i-document;
-        font-family: $f-icons;
-        color: $c-secondary-blue-1;
+        content: settings.$i-document;
+        font-family: settings.$ficons;
+        color: settings.$c-secondary-blue-1;
         font-size: 6em;
         position: absolute;
         top: 40%;
@@ -388,7 +389,7 @@ section {
       }
       h4 {
         &::before {
-          content: $i-squarecheckmark;
+          content: settings.$i-squarecheckmark;
         }
       }
     }
@@ -401,9 +402,9 @@ section {
     .step_graph {
       position: relative;
       &::before {
-        content: $i-document;
-        font-family: $f-icons;
-        color: $c-secondary-blue-1;
+        content: settings.$i-document;
+        font-family: settings.$ficons;
+        color: settings.$c-secondary-blue-1;
         font-size: 6em;
         position: absolute;
         top: 40%;
@@ -438,8 +439,8 @@ section {
           top: 0.2em;
           font-size: 1.2em;
           font-weight: 800;
-          font-family: $f-sans;
-          color: $c-black;
+          font-family: settings.$fsans;
+          color: settings.$c-black;
         }
       }
       .embedcodetag {
@@ -460,7 +461,7 @@ section {
 
       h4 {
         &::before {
-          content: $i-desktop;
+          content: settings.$i-desktop;
           font-size: 1.8em;
         }
       }
@@ -473,9 +474,9 @@ section {
     .step_graph {
       position: relative;
       &::before {
-        content: $i-document;
-        font-family: $f-icons;
-        color: $c-secondary-blue-1;
+        content: settings.$i-document;
+        font-family: settings.$ficons;
+        color: settings.$c-secondary-blue-1;
         font-size: 6em;
         position: absolute;
         top: 40%;
@@ -510,8 +511,8 @@ section {
           top: 0.5em;
           font-size: 1.2em;
           font-weight: 800;
-          font-family: $f-sans;
-          color: $c-black;
+          font-family: settings.$fsans;
+          color: settings.$c-black;
         }
       }
       .successcode {
@@ -530,7 +531,7 @@ section {
       }
       h4 {
         &::before {
-          content: $i-stats;
+          content: settings.$i-stats;
         }
       }
     }
@@ -540,12 +541,12 @@ section {
 .high-impact-action {
   .step_data {
     width: 50%;
-    @include fluidRem(padding, 2rem 1rem 1rem, 5rem 3rem 5rem);
+    @include mixins.fluidRem(padding, 2rem 1rem 1rem, 5rem 3rem 5rem);
 
     h4 {
       &::before {
         font-size: 1.9em;
-        color: $c-primary-blue-dk;
+        color: settings.$c-primary-blue-dk;
       }
     }
   }
@@ -594,17 +595,17 @@ section {
   }
 
   h4 {
-    @include fluidRem(font-size, 1.1rem, 1.5rem);
-    color: $c-primary-blue-dk;
-    font-family: $f-sans;
+    color: settings.$c-primary-blue-dk;
+    font-family: settings.$fsans;
     margin-bottom: 0.5em;
+    @include mixins.fluidRem(font-size, 1.1rem, 1.5rem);
   }
 
   h5 {
-    @include fluidRem(font-size, 0.95rem, 1.1rem);
-    font-family: $f-sans;
+    font-family: settings.$fsans;
     margin-bottom: 0.5em;
     margin-top: 1em;
+    @include mixins.fluidRem(font-size, 0.95rem, 1.1rem);
   }
 }
 
@@ -614,15 +615,15 @@ section {
   .yvtag,
   .embedcodetag,
   .successcode {
-    @include fluidRem(padding, 0.1rem, 0.4rem);
     font-size: 0.9em;
     line-height: 1;
     margin: 0 0.3em;
+    @include mixins.fluidRem(padding, 0.1rem, 0.4rem);
   }
 
   .content {
     h4 {
-      border-bottom: 1px solid color.adjust($c-black, $lightness: 65%);
+      border-bottom: 1px solid color.adjust(settings.$c-black, $lightness: 65%);
       margin-top: 3em;
       margin-bottom: 0.8em;
       padding-bottom: 0.3em;
@@ -630,8 +631,8 @@ section {
       position: relative;
 
       &::before {
-        content: $i-squarecheckmark;
-        font-family: $f-icons;
+        content: settings.$i-squarecheckmark;
+        font-family: settings.$ficons;
         font-size: 1.8em;
         position: absolute;
         left: 0;
@@ -658,12 +659,12 @@ section {
 
       .step_content {
         order: 0;
-        @include fluidRem(padding, 1rem 0, 2rem 0);
+        @include mixins.fluidRem(padding, 1rem 0, 2rem 0);
 
         &::before {
           content: counter(embedSteps) ".";
           font-size: 3em;
-          color: $c-primary-orange;
+          color: settings.$c-primary-orange;
           font-weight: 800;
           margin-right: 0.3em;
         }
@@ -679,20 +680,20 @@ section {
 
   .important_note {
     display: block;
-    @include fluidRem(padding, 0.5rem, 1.5rem);
-    background: color.adjust($c-secondary-violet-lt, $lightness: 15%);
+    background: color.adjust(settings.$c-secondary-violet-lt, $lightness: 15%);
     text-align: center;
     width: 100%;
-    max-width: $mq-700;
+    max-width: settings.$mq-700;
     border-radius: 0.5em;
     margin: 1em auto;
     position: relative;
+    @include mixins.fluidRem(padding, 0.5rem, 1.5rem);
 
     &::before {
       content: "Important";
       display: block;
       text-transform: uppercase;
-      color: rgba($c-secondary-violet-md, 0.07);
+      color: rgba(settings.$c-secondary-violet-md, 0.07);
       font-size: 5em;
       font-weight: 800;
       position: absolute;
@@ -707,7 +708,7 @@ section {
 
     strong {
       font-weight: 800;
-      color: $c-primary-blue-dk;
+      color: settings.$c-primary-blue-dk;
     }
   }
 
@@ -717,38 +718,38 @@ section {
     justify-content: space-between;
     text-align: center;
     width: 100%;
-    max-width: $mq-600;
+    max-width: settings.$mq-600;
     margin: 2em auto;
     position: relative;
     background: white;
     border-radius: 0.5em;
-    @include fluidRem(padding, 0.5rem 0.5rem, 1rem 2rem);
+    @include mixins.fluidRem(padding, 0.5rem 0.5rem, 1rem 2rem);
 
     p {
       font-weight: 700;
-      @include fluidRem(font-size, 1rem, 1.5rem);
-      color: $c-primary-blue-dk;
+      color: settings.$c-primary-blue-dk;
       margin: 0;
+      @include mixins.fluidRem(font-size, 1rem, 1.5rem);
     }
     a {
       display: inline-block;
-      background: $c-primary-alt-blue;
+      background: settings.$c-primary-alt-blue;
       color: white;
       font-weight: 700;
       text-align: center;
       text-decoration: none;
       border-radius: 0.3em;
-      @include fluidRem(padding, 0.5rem, 0.8rem);
+      @include mixins.fluidRem(padding, 0.5rem, 0.8rem);
 
       &:hover,
       &:focus {
-        background: $c-secondary-violet-dk;
+        background: settings.$c-secondary-violet-dk;
       }
     }
   }
 
   .code-toolbar {
-    max-width: $mq-800;
+    max-width: settings.$mq-800;
     margin: 0 auto;
 
     pre {
@@ -761,7 +762,7 @@ section {
 
 .additional-embed-codes {
   display: block;
-  @media (max-width: $mq-1000) {
+  @media (max-width: settings.$mq-1000) {
     overflow-x: scroll;
     width: 100%;
   }

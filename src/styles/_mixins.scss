@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "sass:math";
+@use "settings";
 
 // ================
 // Custom Royall Mixins
@@ -27,8 +28,8 @@
   $_x-prop,
   $_d-minRem,
   $_d-maxRem,
-  $_mq-min: $mq-300,
-  $_mq-max: $mq-1200
+  $_mq-min: settings.$mq-300,
+  $_mq-max: settings.$mq-1200
 ) {
   $_d-mid: "";
 
@@ -73,7 +74,7 @@
   $animations: "";
 
   @for $i from 1 through $max {
-    $animations: #{$animations + nth($animate, $i)};
+    $animations: #{$animations + list.nth($animate, $i)};
 
     @if $i < $max {
       $animations: #{$animations + ", "};
