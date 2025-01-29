@@ -24,8 +24,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
     `,
     { instID: instID }
   )
-
+  console.log("⬇️⬇️⬇️⬇️⬇️ - All locations for instID:", instID)
   res.data.yv.institutions.locations.forEach((location) => {
+    console.log(location.loc_id, location.status)
     if (location.status === "live") {
       createPage({
         component: partnerTemplate,
@@ -44,9 +45,14 @@ module.exports.createPages = async ({ graphql, actions }) => {
         },
       })
     } else {
-      console.log("🛑🛑🛑 ~ location status is not live", location.loc_id, location.status)
+      console.log(
+        "🛑🛑🛑 ~ location status is not live",
+        location.loc_id,
+        location.status
+      )
     }
   })
+  console.log("⬆️⬆️⬆️⬆️⬆️ - All locations for instID:", instID)
 }
 
 exports.onCreatePage = ({ page, actions }) => {

@@ -55,7 +55,10 @@
     }
     $_d-mid: $_d-mid + $_d-iMid;
   }
-  #{$_x-prop}: #{$_d-minRem};
+
+  & {
+    #{$_x-prop}: #{$_d-minRem};
+  }
 
   @media (min-width: #{$_mq-min}) {
     #{$_x-prop}: #{$_d-mid};
