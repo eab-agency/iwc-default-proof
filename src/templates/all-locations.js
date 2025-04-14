@@ -4,10 +4,10 @@ import { Link } from "gatsby"
 const AllLocations = ({ pageContext }) => {
   const { locations } = pageContext
   const locations_defined_in_env_var = process.env.GATSBY_LOCATIONS
-
-  const locationArray = locations_defined_in_env_var
-    .split(",")
-    .map((loc) => Number(loc.trim()))
+  const locationArray =
+    locations_defined_in_env_var && locations_defined_in_env_var.trim()
+      ? locations_defined_in_env_var.split(",").map((loc) => Number(loc.trim()))
+      : []
 
   return (
     <div>
@@ -16,21 +16,28 @@ const AllLocations = ({ pageContext }) => {
         Here are all the locations you have defined in the environment
         variables:
       </p>
-      <ul>
-        {locationArray.map((location) => {
-          const isFound = locations.some((loc) => loc.loc_id === location)
-          return (
-            <li key={location}>
-              {isFound ? (
-                <Link to={`/location/${location}`}>{location}</Link>
-              ) : (
-                location
-              )}
-              <span>{isFound ? " ✅" : " ❌"}</span>
-            </li>
-          )
-        })}
-      </ul>
+      {locationArray.length > 0 ? (
+        <ul>
+          {locationArray.map((location) => {
+            const isFound = locations.some((loc) => loc.loc_id === location)
+            return (
+              <li key={location}>
+                {isFound ? (
+                  <Link to={`/location/${location}`}>{location}</Link>
+                ) : (
+                  location
+                )}
+                <span>{isFound ? " ✅" : " ❌"}</span>
+              </li>
+            )
+          })}
+        </ul>
+      ) : (
+        <p>
+          No locations have been defined in <strong>GATSBY_LOCATIONS</strong>{" "}
+          variable
+        </p>
+      )}
       <p>And here are all the available locations for this partner:</p>
       <ul>
         {locations.map((location) => (

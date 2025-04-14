@@ -26,6 +26,21 @@ module.exports.createPages = async ({ graphql, actions }) => {
     `,
     { instID: instID }
   )
+
+  // Add null check for the data structure
+  if (
+    !res.data ||
+    !res.data.yv ||
+    !res.data.yv.institutions ||
+    !res.data.yv.institutions.locations
+  ) {
+    console.error(
+      "🚨🚨🚨🚨🚨 Error: Missing locations data for instID:",
+      instID
+    )
+    return
+  }
+
   console.log("⬇️⬇️⬇️⬇️⬇️ - All locations for instID:", instID)
   const locations = res.data.yv.institutions.locations
   locations.forEach((location) => {
